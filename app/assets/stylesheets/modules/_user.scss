@@ -1,0 +1,42 @@
+.session{
+  height: 0;
+  position: relative;
+  padding-top: 66.66%;
+  background: url(https://lh3.googleusercontent.com/-TjLW0JOWWJk/WVZFhFUwCoI/AAAAAAAARUE/H-oMPQvFl1M7l4aVKcLnqGLf-4OO0DJyQCCoYBhgL/s0/IMG_6447.jpg) no-repeat center;
+  background-size: contain;
+  background-position: center;
+  &__hide-content{
+    background-color: black;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+  }
+  &__form{
+    display: none;
+    position: absolute;
+    top: 17%;
+    left: 70%;
+    // transform: translate(-30%, -70%);
+    text-align: center;
+    // height: 500px;
+    #session_title{
+      font-size: 37px;
+      font-weight: bold;
+      text-align: center;
+      padding-bottom: 15px;
+      color: #4169E1;
+    }
+    #sign_in_field{
+      color: white;
+      padding-bottom: 15px;
+
+    }
+      @include session-input-field();
+      @include session-submit-btn();
+  }
+}
+

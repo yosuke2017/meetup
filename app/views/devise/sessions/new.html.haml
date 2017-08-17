@@ -1,0 +1,25 @@
+.session{id: "sign-in"}
+  .session__hide-content
+  .session__form
+    %h2{id: "session_title"} SIGN IN
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      = devise_error_messages!
+      .field
+        / = f.label 'メールアドレス', class: "session-each-font"
+        / %br/
+        = f.email_field :email, class: "session-input-field", placeholder: "メールアドレス", autofocus: true
+      .field
+        / = f.label 'パスワード', class: "session-each-font"
+        / - if @minimum_password_length
+        /   %em
+        /     (#{@minimum_password_length} characters minimum)
+        / %br/
+        = f.password_field :password, class: "session-input-field", placeholder: "パスワード", autocomplete: "off"
+      - if devise_mapping.rememberable?
+        .field{id: "sign_in_field"}
+          = f.check_box :remember_me
+          = f.label 'パスワードを保存する'
+      .actions
+        = f.submit "OK", class: "session-submit-btn"
+    / = render "devise/shared/links"
+

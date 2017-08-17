@@ -1,0 +1,19 @@
+@mixin session-input-field(){
+  .session-input-field{
+    font-size: 20px;
+    line-height: 45px;
+    width: 270px;
+    margin-bottom: 20px;
+    padding: 2px;
+    text-align: center;
+    font-family: "Regular Italic";
+    color: #708090;
+    font-weight: bold;
+    border: solid 1px #ccc;
+    &::-webkit-input-placeholder {
+     color: #4682B4;
+     opacity: 0.3;
+    }
+  }
+}
+

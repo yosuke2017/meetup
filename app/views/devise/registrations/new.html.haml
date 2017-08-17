@@ -1,0 +1,29 @@
+.session{id: "sign-up"}
+  .session__hide-content
+  .session__form
+    %h2{id: "session_title"} SIGN UP
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = devise_error_messages!
+      .field
+        / = f.label 'ニックネーム', class: "session-each-font"
+        / %br/
+        = f.text_field :nickname, class: "session-input-field", placeholder: "名前（ニックネーム）", autofocus: true
+      .field
+        / = f.label 'メールアドレス', class: "session-each-font"
+        / %br/
+        = f.email_field :email, class: "session-input-field", placeholder: "メールアドレス", autofocus: true
+      .field
+        / = f.label 'パスワード', class: "session-each-font"
+        / - if @minimum_password_length
+        /   %em
+        /     (#{@minimum_password_length} characters minimum)
+        / %br/
+        = f.password_field :password, class: "session-input-field", placeholder: "パスワード（6文字以上）", autocomplete: "off"
+      .field
+        / = f.label 'パスワード（確認)', class: "session-each-font"
+        / %br/
+        = f.password_field :password_confirmation, class: "session-input-field", placeholder: "パスワード（確認）", autocomplete: "off"
+      .actions
+        = f.submit "OK", class: "session-submit-btn"
+    / = render "devise/shared/links"
+
