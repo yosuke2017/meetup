@@ -1,0 +1,9 @@
+.header
+  .header__right-btns
+    = link_to new_group_path, id: "new-group-btn" do
+      %i.fa.fa-plus.fa-lg
+        %span グループを作る
+    = link_to user_path(current_user), id: "mypage-btn" do
+      %i.fa.fa-user-o.fa-lg
+        %span マイページ
+

@@ -1,0 +1,10 @@
+#group_state_code_wrapper
+  - parent_region ||= params[:parent_region]
+  - country = Carmen::Country.coded(parent_region)  unless parent_region.nil?
+  - if country.nil?
+    %em Please select a country above
+  - elsif country.subregions?
+    = subregion_select(:group, :state_code, parent_region)
+  - else
+    = text_field(:group, :state_code)
+

@@ -1,13 +1,5 @@
 $(function(){
 
-// $('.top__center-content__message').bind('inview', function(event, isInView, visiblePartX, visiblePartY) {
-//       if (isInView) {
-//           console.log("sa");
-//       } else {
-//           console.log("su");
-//       }
-//   });
-
   $('.top__center-content__session-btn-left').hide();
   $('.top__center-content__session-btn-right').hide();
 

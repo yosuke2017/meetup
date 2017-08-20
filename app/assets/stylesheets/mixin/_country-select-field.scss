@@ -1,0 +1,14 @@
+@mixin country-select-field(){
+  #country-select-field{
+    text-indent: 1.5em;
+    height: 35px;
+    width: 290px;
+    cursor: pointer;
+    cursor: hand;
+    background-color: white;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+  }
+}
+
