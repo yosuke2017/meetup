@@ -1,0 +1,32 @@
+.group{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  @include header();
+  &__dropdown{
+    position: absolute;
+    top: 13.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    &-country{
+      display: inline-block;
+      @include country-select-field();
+    }
+    &-region{
+      display: inline-block;
+      @include region-select-field();
+    }
+  }
+  &__contents{
+    position: absolute;
+    top: 18%;
+    left: 13%;
+    border: solid;
+    border-width: thin;
+    height: 80%;
+    width: 75%;
+    margin: 0 auto;
+    @include group-each-content();
+  }
+}

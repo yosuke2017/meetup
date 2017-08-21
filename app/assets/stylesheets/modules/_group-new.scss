@@ -1,0 +1,94 @@
+.group-new{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  .group-new-title{
+    font-family: 'TsukuARdGothic-Regular';
+    position: absolute;
+    font-size: 30px;
+    top: 9%;
+    left: 50%;
+    font-weight: bold;
+    transform: translate(-50%, -50%);
+  }
+  &__form{
+    background-color: #ffffff;
+    font-family: "Osaka";
+    height: 730px;
+    width: 650px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .form-require{
+      color: #fff;
+      background-color: #ea352d;
+      font-size: 14px;
+      padding: .1em .3em;
+      border-radius: 3px;
+    }
+    .error-messages{
+      color: #ea352d;
+      font-family: 'ヒラギノ明朝 ProN';
+    }
+    #under-name-field-message{
+      padding-top: 4px;
+    }
+    #under-country-select-message{
+      padding-top: 4px;
+    }
+    &__name-label{
+      padding: 50px 10px 0 70px;
+    }
+    &__name-field{
+      padding: 5px 10px 5px 70px;
+      .group-new__form-name{
+        width: 80%;
+        font-size: 17px;
+        line-height: 25px;
+        padding: 10px 12px;
+        &::-webkit-input-placeholder {
+          color: #5f5f5f;
+          opacity: 0.6;
+        }
+      }
+    }
+    &__outline-label{
+      padding: 25px 10px 0 70px;
+    }
+    &__outline-field{
+      padding: 5px 10px 5px 70px;
+      .group-new__form-outline{
+        width: 80%;
+        font-size: 17px;
+        padding: 13px 12px;
+        &::-webkit-input-placeholder {
+         color: #5f5f5f;
+         opacity: 0.6;
+        }
+      }
+    }
+
+    &__country-label{
+      padding: 25px 10px 0 70px;
+    }
+
+    &__country-dropdown{
+      padding: 5px 10px 5px 70px;
+    }
+
+    &__region-label{
+      padding: 25px 10px 0 70px;
+    }
+
+    &__region-dropdown{
+      padding: 5px 10px 5px 70px;
+    }
+
+    &__submit{
+      padding-top: 30px ;
+      text-align: center;
+      @include group-new-submit-btn();
+    }
+  }
+}
