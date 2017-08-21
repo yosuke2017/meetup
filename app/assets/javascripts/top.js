@@ -1,6 +1,7 @@
 $(function(){
 
   $('.top__center-content__session-btn-left').hide();
+
   $('.top__center-content__session-btn-right').hide();
 
   $('.button--border').removeClass('in');

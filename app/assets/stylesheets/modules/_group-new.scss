@@ -3,7 +3,7 @@
   height: 100%;
   width: 100%;
   .group-new-title{
-    font-family: 'Osaka';
+    font-family: 'TsukuARdGothic-Regular';
     position: absolute;
     font-size: 30px;
     top: 9%;
@@ -27,6 +27,16 @@
       padding: .1em .3em;
       border-radius: 3px;
     }
+    .error-messages{
+      color: #ea352d;
+      font-family: 'ヒラギノ明朝 ProN';
+    }
+    #under-name-field-message{
+      padding-top: 4px;
+    }
+    #under-country-select-message{
+      padding-top: 4px;
+    }
     &__name-label{
       padding: 50px 10px 0 70px;
     }
@@ -46,7 +56,6 @@
     &__outline-label{
       padding: 25px 10px 0 70px;
     }
-
     &__outline-field{
       padding: 5px 10px 5px 70px;
       .group-new__form-outline{

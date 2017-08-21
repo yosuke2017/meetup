@@ -1,0 +1,9 @@
+.group__each-content{"data-name": "#{group.name}", "data-outline": "#{group.outline}", "data-country": "#{group.country_code}", "data-region": "#{group.region_code}", "data-date": "#{group.created_at}"}
+  .group__each-content__hide
+  .group__each-content__date
+    = group.created_at.strftime("%Y/%m/%d %H:%M")
+  .group__each-content__nickname
+    = group.user.nickname
+  .group__each-content__name
+    = group.name
+

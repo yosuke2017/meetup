@@ -1,0 +1,44 @@
+@mixin group-each-content(){
+  .group__each-content{
+    height: 390px;
+    width: 390px;
+    border: solid;
+    display: inline-block;
+    margin: 5px 0 0 5px;
+    cursor: pointer;
+    cursor: hand;
+    position: relative;
+    &__hide{
+      background-color: black;
+      height: 100%;
+      width: 100%;
+      opacity: 0.5;
+      display: none;
+      cursor: pointer;
+      cursor: hand;
+    }
+    &__date{
+      position: absolute;
+      font-size: 18px;
+      color: #ffffff;
+      top: 60%;
+      left: 5%;
+      // display: none;
+    }
+    &__nickname{
+      position: absolute;
+      font-size: 14.5px;
+      color: #ffffff;
+      top: 60.9%;
+      left: 51.8%;
+    }
+    &__name{
+      position: absolute;
+      font-size: 25px;
+      color: #ffffff;
+      top: 70%;
+      left: 5%;
+      // display: none;
+    }
+  }
+}

@@ -7,16 +7,19 @@
         %span{class: "form-require"} 必須
       .group-new__form__name-field
         = f.text_field :name, placeholder: "例) ロサンゼルスで1人です！一緒にディナーしませんか？？", class: "group-new__form-name"
+        %p{class: "error-messages", id: "under-name-field-message"}
       .group-new__form__outline-label
         = f.label 'グループの説明'
         %span{class: "form-require"} 必須
       .group-new__form__outline-field
         = f.text_area :outline, placeholder: "例) 今ロサンゼルスに1人でいます。\nロサンゼルスに詳しい方、美味しいお店など教えて欲しいです〜！\n連絡待ってます！！", class: "group-new__form-outline", rows: "8"
+        %p{class: "error-messages"}
       .group-new__form__country-label
         = f.label '国を選択してください'
         %span{class: "form-require"} 必須
       .group-new__form__country-dropdown
         = render 'country-select'
+        %p{class: "error-messages", id: "under-country-select-message"}
       .group-new__form__region-label
         = f.label '地域を選んでください'
       .group-new__form__region-dropdown

@@ -19,5 +19,14 @@
     }
   }
   &__contents{
+    position: absolute;
+    top: 18%;
+    left: 13%;
+    border: solid;
+    border-width: thin;
+    height: 80%;
+    width: 75%;
+    margin: 0 auto;
+    @include group-each-content();
   }
 }
