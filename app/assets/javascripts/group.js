@@ -68,6 +68,9 @@ $(function() {
 
 
 
+
+
+
   $('.region-select-field').change(function(){
 
     var selectedRegion = $('.region-select-field.active').val();

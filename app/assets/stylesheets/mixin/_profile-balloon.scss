@@ -1,0 +1,44 @@
+@mixin profile-balloon(){
+  .balloon {
+    font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN';
+    position: absolute;
+    font-weight: bold;
+    display: inline-block;
+    padding: 4px 6px;
+    min-width: 120px;
+    max-width: 100%;
+    color: #fff;
+    font-size: 15px;
+    background: #87CEEB;
+    margin-top: 10px;
+    border-radius: 10px;
+    top: 120%;
+    left: 30%;
+    display: none;
+    &:hover{
+      color: #008080;
+    }
+    &:before{
+      content: "";
+      position: absolute;
+      top: -24px;
+      left: 50%;
+      margin-left: -15px;
+      border: 12px solid transparent;
+      border-bottom: 12px solid #87CEEB;
+      z-index: 2;
+    }
+    &:after{
+      content: "";
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      margin-left: -17px;
+      z-index: 1;
+    }
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

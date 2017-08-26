@@ -1,21 +1,25 @@
 @mixin group-each-content(){
   .group__each-content{
-    height: 390px;
-    width: 390px;
+    height: 300px;
+    width: 300px;
+    background-size: cover;
     border: solid;
+    border-width: thin;
+    border-radius: 18px;
     display: inline-block;
-    margin: 5px 0 0 5px;
-    cursor: pointer;
-    cursor: hand;
+    margin: 6px 0 0 6px;
     position: relative;
+    transition: .8s;
+    opacity: 0;
     &__hide{
       background-color: black;
       height: 100%;
       width: 100%;
-      opacity: 0.5;
+      opacity: 0.75;
       display: none;
       cursor: pointer;
       cursor: hand;
+      border-radius: 18px;
     }
     &__date{
       position: absolute;
@@ -23,14 +27,20 @@
       color: #ffffff;
       top: 60%;
       left: 5%;
-      // display: none;
     }
     &__nickname{
       position: absolute;
-      font-size: 14.5px;
-      color: #ffffff;
-      top: 60.9%;
-      left: 51.8%;
+      top: 60.7%;
+      left: 64.5%;
+      &-font{
+        text-decoration: none;
+        font-size: 16px;
+        color: #ffffff;
+        &:hover{
+          color: #BDB76B;
+          text-decoration: underline;
+        }
+      }
     }
     &__name{
       position: absolute;
@@ -38,7 +48,6 @@
       color: #ffffff;
       top: 70%;
       left: 5%;
-      // display: none;
     }
   }
 }

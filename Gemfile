@@ -35,6 +35,8 @@ gem 'font-awesome-rails'
 
 gem 'haml-rails'
 
+gem 'paperclip'
+
 group :development, :test do
 
   gem 'pry-rails'

@@ -1,0 +1,36 @@
+@mixin upload-order-part(){
+  .upload-order{
+      height: 100%;
+      width: 100%;
+      cursor: pointer;
+      position: relative;
+      background-size: cover;
+      &-hide{
+        height: 100%;
+        width: 100%;
+        background-color: #333;
+        opacity: 0.7;
+      }
+      span{
+        text-align: center;
+        position: absolute;
+        font-weight: bold;
+        top: 50%;
+        left: 20%;
+      }
+      .edit-sub-image{
+        font-size: 14px;
+        color: #fff;
+        position: absolute;
+        top: 36%;
+        left: 1%;
+      }
+      .upload-sub-image{
+        font-size: 14px;
+        color: #333;
+        position: absolute;
+        top: 36%;
+        left: 1%;
+      }
+    }
+}

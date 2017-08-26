@@ -1,0 +1,110 @@
+.user{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  @include header();
+  .active{
+    display: block;
+  }
+  &__contents{
+    background-color: #ffffff;
+    position: absolute;
+    top: 13%;
+    left: 13%;
+    // border: solid;
+    // border-width: thin;
+    height: 100%;
+    width: 75%;
+    margin: 0 auto;
+    @include avatar-edit-thum-view();
+    &-avatar{
+      background-color: #f5f5f5;
+      position: absolute;
+      top: 2%;
+      left: 10%;
+      border: dashed;
+      border-width: thin;
+      border-color: rgb(204, 204, 204);
+      height: 376px;
+      width: 376px;
+      display: none;
+      p{
+        font-weight: bold;
+        position: absolute;
+        top: 50%;
+        left: 45%;
+      }
+      #edit-main-avatar{
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 30%;
+      }
+    }
+    &__sub-image1{
+      background-color: #f5f5f5;
+      position: absolute;
+      top: 42%;
+      left: 10%;
+      border: dashed;
+      border-width: thin;
+      border-color: rgb(204, 204, 204);
+      height: 120px;
+      width: 120px;
+      cursor: pointer;
+      cursor: hand;
+      p{
+        font-weight: bold;
+        position: absolute;
+        top: 40%;
+        left: 32%;
+      }
+    }
+    &__sub-image2{
+      background-color: #f5f5f5;
+      position: absolute;
+      top: 42%;
+      left: 20.2%;
+      border: dashed;
+      border-width: thin;
+      border-color: rgb(204, 204, 204);
+      height: 120px;
+      width: 120px;
+      cursor: pointer;
+      cursor: hand;
+      p{
+        font-weight: bold;
+        position: absolute;
+        top: 40%;
+        left: 32%;
+      }
+    }
+    &__sub-image3{
+      background-color: #f5f5f5;
+      position: absolute;
+      top: 42%;
+      left: 30.4%;
+      border: dashed;
+      border-width: thin;
+      border-color: rgb(204, 204, 204);
+      height: 120px;
+      width: 120px;
+      cursor: pointer;
+      cursor: hand;
+      p{
+        font-weight: bold;
+        position: absolute;
+        top: 40%;
+        left: 32%;
+      }
+    }
+    &__sub-image-show{
+      height: 100%;
+      width: 100%;
+      background-size: cover;
+    }
+    @include upload-order-part();
+    @include profile-part();
+  }
+}
+

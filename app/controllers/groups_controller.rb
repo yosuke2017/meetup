@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
   def index
     @group = Group.new
-    @groups = Group.order('created_at DESC')
+    @groups = Group.includes(:user).order('created_at DESC')
   end
 
   def new
@@ -9,7 +9,6 @@ class GroupsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @group = Group.new(group_params)
     if @group.save
       redirect_to groups_path
