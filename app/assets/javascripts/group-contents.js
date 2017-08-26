@@ -4,7 +4,7 @@ $(function(){
 // ------ ここからがそれぞれのグループのhover時の挙動 ------
 
   $('.group__each-content').hover(function(){
-    $(this).children('.group__each-content__hide').fadeIn(500);
+    $(this).children('.group__each-content__hide').fadeIn(400);
 
       // var Name = $(this).attr('data-name');
       // var Outline = $(this).attr('data-outline');
@@ -21,10 +21,24 @@ $(function(){
     // $(this).children('.group__each-content__name').slideToggle();
 
   },function(){
-    $(this).children('.group__each-content__hide').fadeOut(500);
+    $(this).children('.group__each-content__hide').fadeOut(400);
   });
 
 // ------ ここまでがそれぞれのグループのhover時の挙動 ------
+
+
+
+
+// ------ ここからトップ画面のそれぞれのグループ要素の表示の挙動 ------
+
+$('.group__each-content').on('inview', function(){
+  $(this).animate({
+    'opacity':'1'
+  }, 100)
+});
+
+// ------ ここまでトップ画面のそれぞれのグループ要素の表示の挙動 ------
+
 
 
 
@@ -77,6 +91,41 @@ $(function(){
   });
 
   // ------ ここまでが 地域 を選択した時の挙動 ------
+
+
+
+
+
+// ------ ここから画面TOPへ戻るボタンの実装 ------
+
+  var showFlag = false;
+  var topBtn = $('#page-top');
+  topBtn.css('bottom', '-100px');
+  var showFlag = false;
+  //スクロールが100に達したらボタン表示
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+      if (showFlag == false) {
+          showFlag = true;
+          topBtn.stop().animate({'bottom' : '20px'}, 350);
+      }
+    } else {
+      if (showFlag) {
+          showFlag = false;
+          topBtn.stop().animate({'bottom' : '-100px'}, 350);
+      }
+    }
+  });
+  //スクロールしてトップ
+  topBtn.click(function () {
+    $('body,html').animate({
+        scrollTop: 0
+    }, 300);
+    return false;
+  });
+
+// ------ ここまでが画面TOPへ戻るボタンの実装 ------
+
 
 
 

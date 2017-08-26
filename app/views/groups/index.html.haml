@@ -1,8 +1,10 @@
-.group
+.group{id: "top-position"}
   = render 'header'
   .group__dropdown
     = render 'country-select'
     = render 'region-select'
   .group__contents
     = render @groups
+  %p{id: "page-top"}
+    %a{href: "#top-position"} PAGE TOP
 

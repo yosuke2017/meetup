@@ -8,7 +8,7 @@
     &__right-btns{
       position: absolute;
       top: 60%;
-      left: 80%;
+      left: 75%;
       transform: translate(-50%, -50%);
       text-align: center;
       i {
@@ -18,15 +18,18 @@
           color: #0099e8;
         }
         span{
+          padding-left: 3px;
           font-family: 'Osaka';
         }
       }
       #new-group-btn{
         text-decoration: none;
       }
-      #mypage-btn{
+      .mypage-btn{
         padding-left: 17px;
+        text-decoration: none;
       }
+      @include profile-balloon();
     }
   }
 }

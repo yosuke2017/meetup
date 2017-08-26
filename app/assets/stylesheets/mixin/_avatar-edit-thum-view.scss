@@ -1,0 +1,45 @@
+@mixin avatar-edit-thum-view(){
+  &-avatar-edit{
+    position: absolute;
+    top: 2%;
+    left: 10%;
+    border: dashed;
+    border-width: thin;
+    border-color: rgb(204, 204, 204);
+    height: 376px;
+    width: 376px;
+    display: none;
+    img.thumb {
+      max-width: 376px;
+      min-width: 376px;
+      min-height: 376px;
+      max-height: 376px;
+    }
+    #edit-btn{
+      text-align: center;
+      text-decoration: underline;
+      color: #fff;
+      top: 50%;
+      left: 33%;
+      position: absolute;
+      cursor: pointer;
+      cursor: hand;
+      &:hover{
+        color: #0099e8;
+      }
+    }
+    #delete-btn{
+      text-align: center;
+      text-decoration: underline;
+      color: #fff;
+      top: 50%;
+      left: 53%;
+      position: absolute;
+      cursor: pointer;
+      cursor: hand;
+      &:hover{
+        color: #0099e8;
+      }
+    }
+  }
+}
