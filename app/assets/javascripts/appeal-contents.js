@@ -3,8 +3,8 @@ $(function(){
 
 // ------ ここからがそれぞれのグループのhover時の挙動 ------
 
-  $('.group__each-content').hover(function(){
-    $(this).children('.group__each-content__hide').fadeIn(400);
+  $('.appeal__each-content').hover(function(){
+    $(this).children('.appeal__each-content__hide').fadeIn(400);
 
       // var Name = $(this).attr('data-name');
       // var Outline = $(this).attr('data-outline');
@@ -17,11 +17,11 @@ $(function(){
       // console.log(RegionCode);
       // console.log(CreatedAt);
 
-    // $(this).children('.group__each-content__date').slideToggle();
-    // $(this).children('.group__each-content__name').slideToggle();
+    // $(this).children('.appeal__each-content__date').slideToggle();
+    // $(this).children('.appeal__each-content__name').slideToggle();
 
   },function(){
-    $(this).children('.group__each-content__hide').fadeOut(400);
+    $(this).children('.appeal__each-content__hide').fadeOut(400);
   });
 
 // ------ ここまでがそれぞれのグループのhover時の挙動 ------
@@ -31,7 +31,7 @@ $(function(){
 
 // ------ ここからトップ画面のそれぞれのグループ要素の表示の挙動 ------
 
-$('.group__each-content').on('inview', function(){
+$('.appeal__each-content').on('inview', function(){
   $(this).animate({
     'opacity':'1'
   }, 100)
@@ -49,12 +49,12 @@ $('.group__each-content').on('inview', function(){
 
     var selectedCountry = $('#country-select-field').val();
 
-    $('.group__each-content').fadeOut();
+    $('.appeal__each-content').fadeOut();
 
     countrySelect();
 
     if(selectedCountry === ""){
-      $('.group__each-content').fadeIn(700);
+      $('.appeal__each-content').fadeIn(700);
     }
 
   });
@@ -70,9 +70,9 @@ $('.group__each-content').on('inview', function(){
 
     var selectedRegion = $(this).val();
 
-    $('.group__each-content').fadeOut();
+    $('.appeal__each-content').fadeOut();
 
-    $.each($('.group__each-content'), function(){
+    $.each($('.appeal__each-content'), function(){
 
       var eachRegion = $(this).attr('data-region');
 
@@ -134,7 +134,7 @@ $('.group__each-content').on('inview', function(){
 
     var selectedCountry = $('#country-select-field').val();
 
-    $.each($('.group__each-content'), function(){
+    $.each($('.appeal__each-content'), function(){
 
       console.log('unko');
 

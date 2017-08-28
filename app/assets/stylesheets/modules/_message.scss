@@ -1,0 +1,63 @@
+.message{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  @include header();
+  @include message-left-part();
+  @include talking-start-part();
+  &__talking{
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    border: solid;
+    border-width: thin;
+    border-color: #C0C0C0;
+    width: 33%;
+    top: 13%;
+    left: 51%;
+    &__messages-space{
+      padding: 5px 0 5px 0;
+      overflow: scroll;
+      height: 660px;
+      @include each-message();
+    }
+    &__send-space{
+      position: relative;
+      background-color: #D3D3D3;
+      border-color: #D3D3D3;
+      padding: 8px 0 13px 14px;
+      height: calc(100% - 650px);
+      #message-form{
+        margin-top: 10px;
+        font-size: 17px;
+        padding: 10px 0 0 10px;
+        width: calc(100% - 70px);
+        height: 70px;
+      }
+      .fa-camera{
+        font-size: 25px;
+        position: absolute;
+        right: 3.1%;
+        padding-top: 19px;
+        cursor: pointer;
+        cursor: hand;
+      }
+      #talk-send-btn{
+        position: absolute;
+        bottom: 16%;
+        right: 1.0%;
+        padding: 6px;
+        display: inline-block;
+        font-size: 15px;
+        background-color: #87CEEB;
+        text-decoration: none;
+        color: #ffffff;
+        border: solid 2px #87CEEB;
+        border-radius: 3px;
+        transition: .4s;
+        cursor: pointer;
+        cursor: hand;
+      }
+    }
+  }
+
+}

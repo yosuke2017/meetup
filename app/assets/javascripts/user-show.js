@@ -26,17 +26,20 @@ $(function(){
 
 // -------- ここからcurrent_userが自分のマイページを見ている時のヘッダーのcssの挙動 -------
 
-   var showingPageId = $('.header__right-btns').attr('data-id');
+   // var showingPageId = $('.header__right-btns').attr('data-id');
 
-   var currentuserId = $('.header__right-btns').attr('data-user_id');
+   // var currentuserId = $('.header__right-btns').attr('data-user_id');
 
-   if(showingPageId == currentuserId){
+   // if(showingPageId == currentuserId){
 
-    console.log('onazidayo');
+   //  console.log('onazidayo');
 
-    $('.header__right-btns').css('left', '80.6%');
+   //  $('.header__right-btns').css('left', '80.6%');
 
-   }
+   // } else{
+
+   //  $('.header__right-btns').css('left', '75%');
+   // }
 
 // ------  ここまでがcurrent_userが自分のマイページを見ている時のヘッダーのcssの挙動------
 

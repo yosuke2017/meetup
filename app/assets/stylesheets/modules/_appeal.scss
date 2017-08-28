@@ -1,4 +1,4 @@
-.group{
+.appeal{
   position: relative;
   height: 100%;
   width: 100%;
@@ -25,7 +25,7 @@
     height: 80%;
     width: 75%;
     margin: 0 auto;
-    @include group-each-content();
+    @include appeal-each-content();
   }
   @include back-to-top-btn();
 }

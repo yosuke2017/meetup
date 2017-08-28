@@ -1,0 +1,11 @@
+.appeal__each-content{style: "background-image: url(#{appeal.user.avatar})", "data-name": "#{appeal.name}", "data-country": "#{appeal.country_code}", "data-region": "#{appeal.region_code}", "data-date": "#{appeal.created_at}"}
+  .appeal__each-content__hide
+  .appeal__each-content__nickname
+    = link_to user_path(appeal.user.id), class: "appeal__each-content__nickname-font" do
+      = appeal.user.nickname
+  .appeal__each-content__date
+    = appeal.created_at.strftime("%Y/%m/%d %H:%M")
+  .appeal__each-content__name
+    = link_to appeal_path(appeal), id: "appeal-name" do
+      %p= appeal.name
+

@@ -1,8 +1,8 @@
-.group-new{
+.appeal-new{
   position: relative;
   height: 100%;
   width: 100%;
-  .group-new-title{
+  .appeal-new-title{
     font-family: 'TsukuARdGothic-Regular';
     position: absolute;
     font-size: 30px;
@@ -42,7 +42,7 @@
     }
     &__name-field{
       padding: 5px 10px 5px 70px;
-      .group-new__form-name{
+      .appeal-new__form-name{
         width: 80%;
         font-size: 17px;
         line-height: 25px;
@@ -58,7 +58,7 @@
     }
     &__outline-field{
       padding: 5px 10px 5px 70px;
-      .group-new__form-outline{
+      .appeal-new__form-outline{
         width: 80%;
         font-size: 17px;
         padding: 13px 12px;
@@ -88,7 +88,7 @@
     &__submit{
       padding-top: 30px ;
       text-align: center;
-      @include group-new-submit-btn();
+      @include appeal-new-submit-btn();
     }
   }
 }

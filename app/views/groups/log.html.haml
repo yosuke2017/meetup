@@ -1,0 +1,8 @@
+.log
+  = render 'header'
+  .log__group-tab-space
+    .log__group-tab-space__title
+      %p= current_user.nickname + "さんのこれまでのメッセージログ"
+    .log__group-tab-space__each-group-log
+      = render @groups
+

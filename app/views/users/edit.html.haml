@@ -69,11 +69,11 @@
           %h1 ・自己紹介
           = f.text_area :introduction, rows: "8",value: "#{@user.introduction}", class: "edit-input-textarea"
         - if @user.id == current_user.id
-          .user__contents-profile__groups
-            %h1 ・過去に作成したグループ
+          .user__contents-profile__appeals
+            %h1 ・過去に作成したアピール
             %hr{align: "left"}
-            - @groups.each do |group|
-              %li= group.name
+            - @appeals.each do |appeal|
+              %li= appeal.name
       .user__contents-edit
         = f.submit "保存する", class: "user__contents-edit-btn"
 

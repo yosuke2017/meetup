@@ -30,24 +30,24 @@ $(function() {
 
 // ------ここから下がエラーメッセージの実装------
 
-  $('#group_form').submit(function(){
+  $('#appeal_form').submit(function(){
     var num = 0;
-    var nameForm = $('.group-new__form-name').val();
-    var outlineForm = $('.group-new__form-outline').val();
+    var nameForm = $('.appeal-new__form-name').val();
+    var outlineForm = $('.appeal-new__form-outline').val();
     var countryForm = $('#country-select-field').val();
 
     if(nameForm === ""){
-      $('.group-new__form-name').next().text('入力してください');
+      $('.appeal-new__form-name').next().text('入力してください');
       num = num + 1;
     }else{
-      $('.group-new__form-name').next().text('');
+      $('.appeal-new__form-name').next().text('');
     }
 
     if(outlineForm === ""){
-      $('.group-new__form-outline').next().text('入力してください');
+      $('.appeal-new__form-outline').next().text('入力してください');
       num = num + 1;
     }else{
-      $('.group-new__form-outline').next().text('');
+      $('.appeal-new__form-outline').next().text('');
     }
 
     if(countryForm === ""){

@@ -1,0 +1,31 @@
+@mixin each-message(){
+  &__content{
+    @include message-balloon();
+  }
+  &__image{
+    #right-content-image{
+      clear: both;
+      float: right;
+      max-width: 8px;
+      vertical-align: bottom;
+      padding-right: 193px;
+      margin: 8px 15px;
+      border-radius: 20px;
+      position: relative;
+      display: table;
+      display: inline-block;
+    }
+    #left-content-image{
+      clear: both;
+      float: left;
+      max-width: 8px;
+      vertical-align: bottom;
+      padding-right: 193px;
+      margin: 8px 15px;
+      border-radius: 20px;
+      position: relative;
+      display: table;
+      display: inline-block;
+    }
+  }
+}

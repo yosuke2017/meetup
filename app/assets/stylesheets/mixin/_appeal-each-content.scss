@@ -1,5 +1,5 @@
-@mixin group-each-content(){
-  .group__each-content{
+@mixin appeal-each-content(){
+  .appeal__each-content{
     height: 300px;
     width: 300px;
     background-size: cover;
@@ -44,10 +44,17 @@
     }
     &__name{
       position: absolute;
-      font-size: 25px;
-      color: #ffffff;
       top: 70%;
       left: 5%;
+      #appeal-name{
+        text-decoration: none;
+        font-size: 25px;
+        color: #ffffff;
+        &:hover{
+          color: #0099e8;
+          text-decoration: underline;
+        }
+      }
     }
   }
 }

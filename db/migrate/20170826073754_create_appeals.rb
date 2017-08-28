@@ -1,6 +1,6 @@
-class CreateGroups < ActiveRecord::Migration[5.0]
+class CreateAppeals < ActiveRecord::Migration[5.0]
   def change
-    create_table :groups do |t|
+    create_table :appeals do |t|
       t.string :name, null:false
       t.text :outline, null:false
       t.string :country_code, null:false

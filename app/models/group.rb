@@ -1,7 +1,19 @@
 class Group < ApplicationRecord
-  validates :name, presence: true
-  validates :outline, presence: true
-  validates :country_code, presence: true
+  has_many :messages
+  belongs_to :appeal
   belongs_to :user
+
+  def last_message
+    if @message = self.messages.first
+      if @message.body.present?
+        return @message.body
+      else
+        return "画像が送信されました"
+      end
+    else
+      return "まだメッセージはありません"
+    end
+  end
+
 end
 

@@ -1,0 +1,47 @@
+@mixin each-group-log(){
+  .each-group{
+    font-family: 'Osaka';
+    text-decoration: none;
+    width: 100%;
+    &-log{
+      height: 82px;
+      padding: 15px 0 32px 10px;
+      border-bottom: 1px solid #ababab;
+      background-color: #ffffff;
+      &__appeal-user-avatar{
+        position: relative;
+        height: 83.5px;
+        width: 83.5px;
+        background-size: cover;
+        border-radius: 200px;
+        border: solid;
+        border-width: thin;
+        border-color: #C0C0C0;
+        float: left;
+        display: inline-block;
+        p{
+          font-size: 13px;
+          text-align: center;
+          color: #FF6347;
+          line-height: 190px;
+        }
+      }
+      &__appeal-name{
+        color: #5f5f5f;
+        clear: both;
+        display: inline-block;
+        padding: 12px 0 0 30px;
+        font-size: 27px;
+      }
+      &__last-message{
+        padding: 10px 0 0 110px;
+        font-size: 15.5px;
+        color: #808080;
+      }
+      &:hover{
+        background-color: #ebebeb;
+      }
+    }
+  }
+}
+

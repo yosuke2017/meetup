@@ -8,25 +8,25 @@
     &__right-btns{
       position: absolute;
       top: 60%;
-      left: 75%;
+      left: 72%;
       transform: translate(-50%, -50%);
       text-align: center;
       i {
-        color: #5f5f5f;
+        color: #008B8B;
         font-size: 1.1em;
         &:hover{
-          color: #0099e8;
+          color: #4169E1;
         }
         span{
-          padding-left: 3px;
+          padding: 0 3px 0 3px;
           font-family: 'Osaka';
         }
       }
-      #new-group-btn{
+      #new-appeal-btn{
         text-decoration: none;
       }
       .mypage-btn{
-        padding-left: 17px;
+        padding-left: 13px;
         text-decoration: none;
       }
       @include profile-balloon();

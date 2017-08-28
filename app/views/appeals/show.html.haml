@@ -1,0 +1,20 @@
+.message
+  = render 'header'
+  .message__left-part
+    .message__left-part__user-avatar{style: "background-image: url(#{@appeal.user.avatar.url(:medium)})"}
+    .message__left-part__user-name
+      = link_to user_path(@appeal.user), id: "user-link" do
+        = @appeal.user.nickname + "さんのプロフィールを見る"
+    %hr
+    .message__left-part__name
+      = "「 " + @appeal.name + "」"
+    .message__left-part__date
+      = @appeal.created_at.strftime("%Y/%m/%d %H:%M")
+    .message__left-part__outline
+      = @appeal.outline
+  .message__talking-start-part
+    = form_for [@group] do |f|
+      = hidden_field_tag :appeal_id, @appeal.id
+      = hidden_field_tag :receiver_id, @appeal.user.id
+      = f.submit id: "talk-start-btn", value: "#{@appeal.user.nickname}さんにメッセージを送る(無料)"
+

@@ -1,0 +1,33 @@
+.message
+  = render 'header'
+  .message__left-part
+    - if @group.appeal.user.id != current_user.id
+      .message__left-part__user-avatar{style: "background-image: url(#{@group.appeal.user.avatar.url(:medium)})"}
+      .message__left-part__user-nickname
+        = link_to user_path(@group.appeal.user), id: "user-link" do
+          = @group.appeal.user.nickname + "さんのプロフィールを見る"
+    - else
+      .message__left-part__user-avatar{style: "background-image: url(#{@group.user.avatar.url(:medium)})"}
+      .message__left-part__user-nickname
+        = link_to user_path(@group.user), id: "user-link" do
+          = @group.user.nickname + "さんのプロフィールを見る"
+    %hr
+    .message__left-part__name
+      = "「" + @group.appeal.name + "」"
+    / .message__left-part__nickname
+    /   = "by " + @group.appeal.user.nickname + "さん"
+    .message__left-part__date
+      = @group.appeal.created_at.strftime("%Y/%m/%d %H:%M")
+    .message__left-part__outline
+      = @group.appeal.outline
+  .message__talking
+    .message__talking__messages-space
+      = render @messages
+    .message__talking__send-space
+      = form_for [@group, @message] do |f|
+        = f.text_area :body, rows: "8", id: "message-form", placeholder: "メッセージを入力してください"
+        = f.label :image do
+          %i.fa.fa-camera
+        = f.file_field :image, style: "display:none;"
+        = f.submit id: "talk-send-btn", value: "送信"
+
