@@ -1,0 +1,54 @@
+@mixin message-balloon(){
+  .left, .right {
+    max-width: 80%;
+    padding: 10px 15px;
+    margin: 8px 18px;
+    border-radius: 20px;
+    position: relative;
+    display: table;
+    display: inline-block;
+    clear: both;
+  }
+  .left {
+    background: #f2f2f2;
+    float: left;
+  }
+  .right {
+    background: #c7e7e9;
+    float: right;
+  }
+  .left:before, .right:before {
+    content:"";
+    width: 15px;
+    height: 20px;
+    position: absolute;
+    top: -2px;
+  }
+  .left:before {
+    border-radius: 0 15px;
+    left: -10px;
+    background: #f2f2f2;
+  }
+  .right:before {
+    border-radius: 15px 0;
+    right: -10px;
+    background: #c7e7e9;
+  }
+  .left:after, .right:after {
+    content:"";
+    width: 17px;
+    height: 20px;
+    position: absolute;
+    top: -13px;
+    background: rgb(255, 255, 255);;
+  }
+  .left:after {
+    border-radius: 0 17px;
+    left: -12px;
+  }
+  .right:after {
+    border-radius: 17px 0;
+    right: -12px;
+  }
+
+}

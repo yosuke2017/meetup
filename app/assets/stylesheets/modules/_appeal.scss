@@ -1,31 +1,27 @@
-.group{
-  position: relative;
+.appeal{
   height: 100%;
   width: 100%;
   @include header();
   &__dropdown{
-    position: absolute;
-    top: 13.5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 35px;
     text-align: center;
     &-country{
+      position: relative;
       display: inline-block;
       @include country-select-field();
     }
     &-region{
+      position: relative;
       display: inline-block;
       @include region-select-field();
     }
   }
   &__contents{
-    position: absolute;
-    top: 18%;
-    left: 12%;
+    padding-top: 30px;
     height: 80%;
-    width: 75%;
+    width: 1000px;
     margin: 0 auto;
-    @include group-each-content();
+    @include appeal-each-content();
   }
   @include back-to-top-btn();
 }

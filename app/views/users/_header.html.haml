@@ -1,13 +1,13 @@
 .header
   .header__right-btns{"data-id": "#{@user.id}", "data-user_id": "#{current_user.id}"}
-    = link_to new_group_path, id: "new-group-btn" do
+    = link_to new_appeal_path, id: "new-appeal-btn" do
       %i.fa.fa-plus.fa-lg
-        %span グループを作る
+        %span レポートを作る
     - if @user.id != current_user.id
       = link_to user_path(current_user), class: "mypage-btn" do
         %i.fa.fa-user-o.fa-lg
           %span マイページ
-    = link_to groups_path, class: "mypage-btn" do
+    = link_to appeals_path, class: "mypage-btn" do
       %i.fa.fa-reply.fa-lg
         %span トップへ戻る
 

@@ -1,0 +1,22 @@
+.message
+  = render 'header'
+  .message__contents
+    .message__contents__left-part
+      .message__contents__left-part__user-avatar{style: "background-image: url(#{@appeal.user.avatar.url(:medium)})"}
+      .message__contents__left-part__user-nickname
+      %hr
+      = form_for @appeal do |f|
+        .message__contents__left-part__name-edit
+          = f.text_field :name, id: "name-edit", value: "#{@appeal.name}"
+        .message__contents__left-part__date
+          = @appeal.created_at.strftime('%Y/%m/%d %H:%M')
+        .message__contents__left-part__outline-edit
+          = f.text_area :outline, rows: "8", id: "outline-edit", value: "#{@appeal.outline}"
+        .message__contents__left-part__edit-btn-edit
+          = f.submit "保存する", id: "submit-edit"
+    .message__contents__self-appeal-right-space
+      .message__contents__self-appeal-right-space__title
+        %p= "「" + @appeal.name + "」へのメッセージ一覧"
+      .message__contents__self-appeal-right-space__each-group
+        = render 'each-group'
+

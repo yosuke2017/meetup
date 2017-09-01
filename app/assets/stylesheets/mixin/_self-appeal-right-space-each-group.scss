@@ -1,0 +1,13 @@
+@mixin self-appeal-right-space-each-group(){
+  &__each-group{
+    &__user-nickname{
+      font-size: 18px;
+      font-weight: bold;
+      padding-left: 40px;
+      #kara-message-todokimashita{
+        color: #e74c3c;
+      }
+    }
+  }
+}
+

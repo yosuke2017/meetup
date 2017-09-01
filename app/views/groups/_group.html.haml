@@ -1,10 +1,26 @@
-.group__each-content{style: "background-image: url(#{group.user.avatar})", "data-name": "#{group.name}", "data-country": "#{group.country_code}", "data-region": "#{group.region_code}", "data-date": "#{group.created_at}"}
-  .group__each-content__hide
-  .group__each-content__nickname
-    = link_to user_path(group.user.id), class: "group__each-content__nickname-font" do
-      = group.user.nickname
-  .group__each-content__date
-    = group.created_at.strftime("%Y/%m/%d %H:%M")
-  .group__each-content__name
-    = group.name
+- if group.user_id == current_user.id || group.receiver_id == current_user.id
+  - if group.user_id == current_user.id
+    - if group.messages.present?
+      = link_to group_messages_path(group), class: "each-group" do
+        .each-group-log
+          .each-group-log__appeal-user-avatar{style: "background-image: url(#{group.appeal.user.avatar})"}
+          .each-group-log__appeal-user-nickname
+            %span= group.appeal.user.nickname
+          .each-group-log__last-message
+            = group.last_message
+          .each-group-log__last-message-date
+            %i.fa.fa-clock-o.fa-fw= group.last_message_date.created_at.strftime("%Y/%m/%d")
+          %i.fa.fa-angle-right.fa-lg
+  - if group.user_id != current_user.id
+    - if group.messages.present?
+      = link_to group_messages_path(group), class: "each-group" do
+        .each-group-log
+          .each-group-log__appeal-user-avatar{style: "background-image: url(#{group.user.avatar})"}
+          .each-group-log__appeal-user-nickname
+            %span= group.user.nickname
+          .each-group-log__last-message
+            = group.last_message
+          .each-group-log__last-message-date
+            %i.fa.fa-clock-o.fa-fw= group.last_message_date.created_at.strftime("%Y/%m/%d")
+          %i.fa.fa-angle-right.fa-lg
 

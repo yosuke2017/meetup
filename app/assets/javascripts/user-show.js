@@ -4,19 +4,19 @@ $(function(){
 
   // ------ ここからマイページのサブイメージにマウスオーバーした時のメインイメージの挙動 ------
 
-  $('.user__contents__sub-image-show').hover(function(){
+  $('.user__contents--image__sub-image-show').hover(function(){
 
-    avatar = $('.user__contents-avatar').children('.user__contents__sub-image-show').css("background-image");
+    avatar = $('.user__contents--image__avatar').children('.user__contents--image__sub-image-show').css("background-image");
 
     // ↑↑変更される前のavatar画像のURLを取得している。hoverファンクションの第二引数で使いたいため、あえてグローバススコープでの変数宣言。
 
     var sub_image = $(this).css('background-image');
 
-    $('.user__contents-avatar').children('.user__contents__sub-image-show').css("background-image", sub_image);
+    $('.user__contents--image__avatar').children('.user__contents--image__sub-image-show').css("background-image", sub_image);
 
   },function(){
 
-    $('.user__contents-avatar').children('.user__contents__sub-image-show').css("background-image", avatar);
+    $('.user__contents--image__avatar').children('.user__contents--image__sub-image-show').css("background-image", avatar);
 
   });
 
@@ -26,17 +26,20 @@ $(function(){
 
 // -------- ここからcurrent_userが自分のマイページを見ている時のヘッダーのcssの挙動 -------
 
-   var showingPageId = $('.header__right-btns').attr('data-id');
+   // var showingPageId = $('.header__right-btns').attr('data-id');
 
-   var currentuserId = $('.header__right-btns').attr('data-user_id');
+   // var currentuserId = $('.header__right-btns').attr('data-user_id');
 
-   if(showingPageId == currentuserId){
+   // if(showingPageId == currentuserId){
 
-    console.log('onazidayo');
+   //  console.log('onazidayo');
 
-    $('.header__right-btns').css('left', '80.6%');
+   //  $('.header__right-btns').css('left', '80.6%');
 
-   }
+   // } else{
+
+   //  $('.header__right-btns').css('left', '75%');
+   // }
 
 // ------  ここまでがcurrent_userが自分のマイページを見ている時のヘッダーのcssの挙動------
 

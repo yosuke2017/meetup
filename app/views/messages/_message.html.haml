@@ -1,0 +1,19 @@
+- if message.user.id == current_user.id
+  - if message.body?
+    .message__contents__talking__messages-space__content
+      %p{class: "right"}
+        = message.body
+  - if message.image?
+    .message__contents__talking__messages-space__image
+      %div{id: "right-content-image"}
+        = image_tag message.image.url(:message_image)
+- else
+  - if message.body?
+    .message__contents__talking__messages-space__content
+      %p{class: "left"}
+        = message.body
+  - if message.image?
+    .message__contents__talking__messages-space__image
+      %div{id: "left-content-image"}
+        = image_tag message.image.url(:message_image)
+

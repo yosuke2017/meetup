@@ -1,0 +1,64 @@
+@mixin message-left-part(){
+  .message__contents__left-part{
+    float: left;
+    font-family: 'Osaka';
+    background-color: #ffffff;
+    border: solid;
+    border-width: thin;
+    border-color: #C0C0C0;
+    padding-top: 20px;
+    width: 44.60%;
+    padding-top: 35px;
+    &__user-avatar{
+      border: solid;
+      border-width: thin;
+      border-color: #C0C0C0;
+      background-size: cover;
+      border-radius: 50px;
+      text-align: center;
+      margin: 0 auto;
+      height: 250px;
+      width: 250px;
+    }
+    &__user-nickname{
+      padding: 15px 0 15px 0;
+      text-align: center;
+      font-size: 20px;
+      #user-link{
+        color: #1E90FF;
+        text-decoration: none;
+        &:hover{
+          text-decoration: underline;
+          color: #0099e8;
+        }
+      }
+    }
+    &__name{
+      font-family: 'Yu Gothic';
+      padding: 17px 12px 0 10px;
+      font-size: 25px;
+      font-weight: bold;
+      text-align: center;
+      color: #2980b9;
+    }
+    &__date{
+      padding-top: 4px;
+      font-size: 14px;
+      font-weight: bold;
+      color:  #708090;
+      text-align: center;
+    }
+    &__outline{
+      padding: 20px 5px 32px 5px;
+      color: #333333;
+      text-align: center;
+      font-size: 16px;
+    }
+    &__edit-btn{
+      padding: 0 0 16px 0;
+      text-align: center;
+      font-size: 19px;
+      color: #1E90FF;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@mixin showing-self-appeal-right-space(){
+  &__self-appeal-right-space{
+    background-color: rgb(255, 255, 255);
+    border: solid;
+    border-width: thin;
+    border-color: #C0C0C0;
+    float: right;
+    width: 55.001%;
+    height: 750px;
+    &__title{
+      text-align: center;
+      padding: 18px 15px 28px 5px;
+      p{
+        font-size: 24px;
+      }
+    }
+    @include self-appeal-right-space-each-group();
+  }
+}

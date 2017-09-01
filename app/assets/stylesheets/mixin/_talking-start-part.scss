@@ -1,0 +1,26 @@
+@mixin talking-start-part(){
+  &__talking-start-part{
+    background-color: rgb(255, 255, 255);
+    border: solid;
+    border-width: thin;
+    border-color: #C0C0C0;
+    float: right;
+    width: 55.001%;
+    height: 750px;
+    text-align: center;
+    line-height: 680px;
+    #talk-start-btn{
+      font-size: 19px;
+      font-weight: bold;
+      cursor: pointer;
+      cursor: hand;
+      padding: 1.1em 2.8em;
+      text-decoration: none;
+      background-color: rgb(255, 255, 255);
+      text-align: center;
+      color: #FF6347;
+      border: solid 2px #FFA07A;
+      border-radius: 3px;
+    }
+  }
+}

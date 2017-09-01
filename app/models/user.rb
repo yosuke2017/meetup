@@ -3,7 +3,11 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  has_many :appeals, dependent: :destroy
+
   has_many :groups
+
+  has_many :messages
 
   mount_uploader :sub_image1, ImageUploader
 
@@ -12,7 +16,7 @@ class User < ApplicationRecord
   mount_uploader :sub_image3, ImageUploader
 
   has_attached_file :avatar,
-        styles:  { medium: "376x376#", thumb: "100x100#" }
+        styles:  { medium: "376x376#", original: "340x340#", thumb: "100x100#" }
   validates_attachment_content_type :avatar,
         content_type: ["image/jpg","image/jpeg","image/png"]
 

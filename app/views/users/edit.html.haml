@@ -1,60 +1,61 @@
 .user
   = render 'header'
-  .user__contents
-    = form_for @user do |f|
-      .user__contents-avatar-edit
-        = f.label :avatar do
-          %p{id: "edit-btn"} 変更する
-        = f.file_field :avatar, style: "display: none"
-        %p{id: "delete-btn"} 削除する
-      .user__contents-avatar.active
-        - if @user.avatar?
-          = f.label :avatar do
-            .upload-order{style: "background-image: url(#{@user.avatar.url(:medium)})"}
-              .upload-order-hide
-              %span{id: "edit-main-avatar"} メイン画像を変更する
-          = f.file_field :avatar, class: "avatar-input", style: "display: none"
-        - else
-          = f.label :avatar do
-            .upload-order
-              %span クリックして画像をアップロード
-          = f.file_field :avatar, style: "display: none"
-      .user__contents__sub-image1
-        - if @user.sub_image1?
-          = f.label :sub_image1 do
-            .upload-order{id: "unkotest", style: "background-image: url(#{@user.sub_image1})"}
-              .upload-order-hide
-              %span{class: "edit-sub-image"} サブ画像1を変更する
-          = f.file_field :sub_image1,  style: "display: none"
-        - else
-          = f.label :sub_image1 do
-            .upload-order
-              %span{class: "upload-sub-image"}サブ画像1をアップロード
-          = f.file_field :sub_image1, style: "display: none"
-      .user__contents__sub-image2
-        - if @user.sub_image2?
-          = f.label :sub_image2 do
-            .upload-order{id: "testy", style: "background-image: url(#{@user.sub_image2})"}
-              .upload-order-hide
-              %span{class: "edit-sub-image"} サブ画像2を変更する
-          = f.file_field :sub_image2, style: "display: none"
-        - else
-          = f.label :sub_image2 do
-            .upload-order
-              %span{class: "upload-sub-image"} サブ画像2をアップロード
-          = f.file_field :sub_image2, style: "display: none"
-      .user__contents__sub-image3
-        - if @user.sub_image3?
-          = f.label :sub_image3 do
-            .upload-order{style: "background-image: url(#{@user.sub_image3})"}
-              .upload-order-hide
-              %span{class: "edit-sub-image"} サブ画像3を変更する
-          = f.file_field :sub_image3, style: "display: none"
-        - else
-          = f.label :sub_image3 do
-            .upload-order
-              %span{class: "upload-sub-image"}サブ画像3をアップロード
-          = f.file_field :sub_image3, style: "display: none"
+  = form_for @user do |f|
+    .user__contents
+      .user__contents--image
+        / .user__contents--image__avatar-edit
+        /   = f.label :avatar do
+        /     %p{id: "edit-btn"} 変更する
+        /   = f.file_field :avatar, style: "display: none"
+        /   %p{id: "delete-btn"} 削除する
+        .user__contents--image__avatar.active
+          - if @user.avatar?
+            = f.label :avatar do
+              .upload-order{style: "background-image: url(#{@user.avatar.url(:medium)})"}
+                .upload-order-hide
+                %span{id: "edit-main-avatar"} メイン画像を変更する
+            = f.file_field :avatar, class: "avatar-input", style: "display: none"
+          - else
+            = f.label :avatar do
+              .upload-order
+                %span クリックして画像をアップロード
+            = f.file_field :avatar, style: "display: none"
+        .user__contents--image__sub--image
+          - if @user.sub_image1?
+            = f.label :sub_image1 do
+              .upload-order{id: "unkotest", style: "background-image: url(#{@user.sub_image1})"}
+                .upload-order-hide
+                %span{class: "edit-sub-image"} サブ画像1を変更する
+            = f.file_field :sub_image1,  style: "display: none"
+          - else
+            = f.label :sub_image1 do
+              .upload-order
+                %span{class: "upload-sub-image"}サブ画像1をアップロード
+            = f.file_field :sub_image1, style: "display: none"
+        .user__contents--image__sub--image
+          - if @user.sub_image2?
+            = f.label :sub_image2 do
+              .upload-order{id: "testy", style: "background-image: url(#{@user.sub_image2})"}
+                .upload-order-hide
+                %span{class: "edit-sub-image"} サブ画像2を変更する
+            = f.file_field :sub_image2, style: "display: none"
+          - else
+            = f.label :sub_image2 do
+              .upload-order
+                %span{class: "upload-sub-image"} サブ画像2をアップロード
+            = f.file_field :sub_image2, style: "display: none"
+        .user__contents--image__sub--image
+          - if @user.sub_image3?
+            = f.label :sub_image3 do
+              .upload-order{style: "background-image: url(#{@user.sub_image3})"}
+                .upload-order-hide
+                %span{class: "edit-sub-image"} サブ画像3を変更する
+            = f.file_field :sub_image3, style: "display: none"
+          - else
+            = f.label :sub_image3 do
+              .upload-order
+                %span{class: "upload-sub-image"}サブ画像3をアップロード
+            = f.file_field :sub_image3, style: "display: none"
       .user__contents-profile
         .user__contents-profile__nickname
           %h1 ・名前（ニックネーム）
@@ -69,13 +70,13 @@
           %h1 ・自己紹介
           = f.text_area :introduction, rows: "8",value: "#{@user.introduction}", class: "edit-input-textarea"
         - if @user.id == current_user.id
-          .user__contents-profile__groups
-            %h1 ・過去に作成したグループ
+          .user__contents-profile__appeals
+            %h1 ・過去に作成したレポート
             %hr{align: "left"}
-            - @groups.each do |group|
-              %li= group.name
-      .user__contents-edit
-        = f.submit "保存する", class: "user__contents-edit-btn"
+            - @appeals.each do |appeal|
+              %li= appeal.name
+      .user__contents__sending-btn-part
+        = f.submit "保存する", class: "user__contents__sending-btn-part__save"
 
 
 

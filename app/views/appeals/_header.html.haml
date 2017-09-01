@@ -1,0 +1,19 @@
+.header
+  .header__right-btns
+    = link_to new_appeal_path, class: "mypage-btn" do
+      %i.fa.fa-plus.fa-lg
+        %span レポートを作る
+    / = link_to appeal_path(appeal), class: "mypage-btn" do
+    /   %i.fa.fa-paper-plane.fa-lg
+    /     %span 自分のレポート
+    = link_to log_groups_path, class: "mypage-btn" do
+      %i.fa.fa-history.fa-lg
+        %span メッセージログ
+    = link_to user_path(current_user), class: "mypage-btn" do
+      %i.fa.fa-user-o.fa-lg
+        %span マイページ
+    - unless current_user.avatar.present?
+      = link_to user_path(current_user) do
+        .balloon プロフィール画像を登録しよう！
+
+

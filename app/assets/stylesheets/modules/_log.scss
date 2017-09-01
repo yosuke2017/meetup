@@ -1,0 +1,21 @@
+.log{
+  height: 100%;
+  width: 100%;
+  @include header();
+  &__group-tab-space{
+    margin: 0 auto;
+    padding-top: 5px;
+    width: 42%;
+    min-height: 60%;
+    @include log-tab-menu();
+    &__each-appeal{
+      cursor: pointer;
+      cursor: hand;
+      @include each-appeal-contents();
+    }
+    &__each-group-log{
+      @include each-group-log();
+    }
+  }
+}
+

@@ -1,26 +1,27 @@
 .user
   = render 'header'
   .user__contents
-    .user__contents-avatar.active
-      - if @user.avatar?
-        .user__contents__sub-image-show{style: "background-image: url(#{@user.avatar.url(:medium)})"}
-      - else
-        %p 未設定
-    .user__contents__sub-image1
-      - if @user.sub_image1?
-        .user__contents__sub-image-show{style: "background-image: url(#{@user.sub_image1.url})"}
-      - else
-        %p 未設定
-    .user__contents__sub-image2
-      - if @user.sub_image2?
-        .user__contents__sub-image-show{style: "background-image: url(#{@user.sub_image2})"}
-      - else
-        %p 未設定
-    .user__contents__sub-image3
-      - if @user.sub_image3?
-        .user__contents__sub-image-show{style: "background-image: url(#{@user.sub_image3})"}
-      - else
-        %p 未設定
+    .user__contents--image
+      .user__contents--image__avatar.active
+        - if @user.avatar?
+          .user__contents--image__sub-image-show{style: "background-image: url(#{@user.avatar.url(:medium)})"}
+        - else
+          %p 未設定
+      .user__contents--image__sub--image
+        - if @user.sub_image1?
+          .user__contents--image__sub-image-show{style: "background-image: url(#{@user.sub_image1.url})"}
+        - else
+          %p 未設定
+      .user__contents--image__sub--image
+        - if @user.sub_image2?
+          .user__contents--image__sub-image-show{style: "background-image: url(#{@user.sub_image2})"}
+        - else
+          %p 未設定
+      .user__contents--image__sub--image
+        - if @user.sub_image3?
+          .user__contents--image__sub-image-show{style: "background-image: url(#{@user.sub_image3})"}
+        - else
+          %p 未設定
     .user__contents-profile
       .user__contents-profile__nickname
         %h1 ・名前（ニックネーム）
@@ -29,7 +30,8 @@
       .user__contents-profile__age
         %h1 ・年齢
         %hr{align: "left"}
-        %p= @user.age
+        - if @user.age?
+          %p= @user.age + "歳"
       .user__contents-profile__job
         %h1 ・職業
         %hr{align: "left"}
@@ -38,14 +40,15 @@
         %h1 ・自己紹介
         %hr{align: "left"}
         = simple_format @user.introduction, id: "user-introduction"
-      .user__contents-profile__groups
-        %h1 ・過去に作成したグループ
+      .user__contents-profile__appeals
+        %h1 ・過去に作成したレポート
         %hr{align: "left"}
-        - @groups.each do |group|
-          %li= group.name
+        - @appeals.each do |appeal|
+          %li= "「" + appeal.name + "」"
     - if @user.id == current_user.id
-      .user__contents-edit
-        = link_to "編集する", edit_user_path(current_user), class: "user__contents-edit-btn"
-      .user__contents-sign-out
-        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "user__contents-sign-out-btn"
+      .user__contents__sending-btn-part
+        = link_to "編集する", edit_user_path(current_user), class: "user__contents__sending-btn-part__edit"
+      .user__contents__sending-btn-part-under
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "user__contents__sending-btn-part-under__sign-out"
+
 

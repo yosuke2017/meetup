@@ -2,12 +2,12 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @groups = @user.groups.order('created_at DESC').limit(10)
+    @appeals = @user.appeals.order('created_at DESC').limit(10)
   end
 
   def edit
     @user = User.find(current_user.id)
-    @groups = @user.groups.order('created_at DESC').limit(10)
+    @appeals = @user.appeals.order('created_at DESC').limit(10)
   end
 
   def update
