@@ -8,6 +8,7 @@ class GroupsController < ApplicationController
   end
 
   def log
+    @appeals = Appeal.where(user_id: current_user.id).order("created_at DESC")
     @groups = Group.includes(:messages).order("messages.created_at DESC")
   end
 

@@ -1,0 +1,7 @@
+- @appeals.each do |appeal|
+  = link_to appeal_path(appeal), id: "each-appeal-link" do
+    .log__group-tab-space__each-appeal__contents
+      .log__group-tab-space__each-appeal__contents__name
+        = "・「" + appeal.name + "」"
+        %span= "(" + appeal.created_at.strftime("%Y/%m/%d") + ")"
+

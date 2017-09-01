@@ -1,16 +1,11 @@
 @mixin header() {
   .header {
-    position: relative;
-    height: 90px;
+    height: 110px;
     background-color: #ffffff;
     box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
-    float: none;
     &__right-btns{
-      position: absolute;
-      top: 60%;
-      left: 72%;
-      transform: translate(-50%, -50%);
-      text-align: center;
+      float: right;
+      padding: 70px 130px 0 0;
       i {
         color: #008B8B;
         font-size: 1.1em;

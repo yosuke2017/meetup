@@ -17,14 +17,18 @@ $(function() {
     $("#" + selectedCountry).removeAttr('disabled');
 
     if(selectedCountry === ""){
+      $('.region-angle').css('display', 'none');
       $('#initial-state').addClass('active');
     }else if(selectedCountry === "otherwise"){
       $('#initial-state').addClass('active');
+    }else{
+      $('.region-angle').css('display', 'block');
     }
 
   });
 
 // ------ ここまで'国'が選択された時の'地域選択リスト'などの挙動 ------
+
 
 
 

@@ -49,7 +49,7 @@ $('.appeal__each-content').on('inview', function(){
 
     var selectedCountry = $('#country-select-field').val();
 
-    $('.appeal__each-content').fadeOut();
+    $('.appeal__each-content').hide();
 
     countrySelect();
 
@@ -135,8 +135,6 @@ $('.appeal__each-content').on('inview', function(){
     var selectedCountry = $('#country-select-field').val();
 
     $.each($('.appeal__each-content'), function(){
-
-      console.log('unko');
 
       var eachCountry = $(this).attr('data-country');
 

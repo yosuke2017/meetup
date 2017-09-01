@@ -1,0 +1,6 @@
+- @groups.each do |group|
+  - if group.messages.present?
+    .message__contents__self-appeal-right-space__each-group__user-nickname
+      = link_to group_messages_path(group), id: "kara-message-todokimashita" do
+        = "・" + group.user.nickname + "さんからメッセージが届きました！"
+

@@ -1,19 +1,26 @@
 - if group.user_id == current_user.id || group.receiver_id == current_user.id
   - if group.user_id == current_user.id
-    = link_to group_messages_path(group), class: "each-group" do
-      .each-group-log
-        .each-group-log__appeal-user-avatar{style: "background-image: url(#{group.appeal.user.avatar})"}
-          %p= group.appeal.user.nickname
-        .each-group-log__appeal-name
-          = "「" + group.appeal.name + "」"
-        .each-group-log__last-message
-          %p= group.last_message
+    - if group.messages.present?
+      = link_to group_messages_path(group), class: "each-group" do
+        .each-group-log
+          .each-group-log__appeal-user-avatar{style: "background-image: url(#{group.appeal.user.avatar})"}
+          .each-group-log__appeal-user-nickname
+            %span= group.appeal.user.nickname
+          .each-group-log__last-message
+            = group.last_message
+          .each-group-log__last-message-date
+            %i.fa.fa-clock-o.fa-fw= group.last_message_date.created_at.strftime("%Y/%m/%d")
+          %i.fa.fa-angle-right.fa-lg
   - if group.user_id != current_user.id
-    = link_to group_messages_path(group), class: "each-group" do
-      .each-group-log
-        .each-group-log__appeal-user-avatar{style: "background-image: url(#{group.user.avatar})"}
-          %p= group.user.nickname
-        .each-group-log__appeal-name
-          = "「" + group.appeal.name + "」"
-        .each-group-log__last-message
-          %p= group.last_message
+    - if group.messages.present?
+      = link_to group_messages_path(group), class: "each-group" do
+        .each-group-log
+          .each-group-log__appeal-user-avatar{style: "background-image: url(#{group.user.avatar})"}
+          .each-group-log__appeal-user-nickname
+            %span= group.user.nickname
+          .each-group-log__last-message
+            = group.last_message
+          .each-group-log__last-message-date
+            %i.fa.fa-clock-o.fa-fw= group.last_message_date.created_at.strftime("%Y/%m/%d")
+          %i.fa.fa-angle-right.fa-lg
+

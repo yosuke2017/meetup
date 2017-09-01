@@ -1,8 +1,25 @@
 .log
   = render 'header'
   .log__group-tab-space
-    .log__group-tab-space__title
-      %p= current_user.nickname + "さんのこれまでのメッセージログ"
-    .log__group-tab-space__each-group-log
-      = render @groups
+    .wrap
+      %ul.tabs.group
+        %li
+          %a.active{href: "#/one", id: "report"} 過去に作成したレポート
+        %li
+          %a{href: "#/two", id: "talk-history"} メッセージ履歴
+      #content
+        .log__group-tab-space__each-appeal{id: "one"}
+          = render 'each-appeal'
+        .log__group-tab-space__each-group-log{style: "display: none;", id: "two"}
+          = render @groups
+
+
+
+
+
+
+    / .log__group-tab-space__title
+    /   %p= current_user.nickname + "さんのこれまでのメッセージログ"
+    / .log__group-tab-space__each-group-log
+    /   = render @groups
 

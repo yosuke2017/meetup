@@ -1,5 +1,5 @@
 .appeal{id: "top-position"}
-  = render 'header'
+  = render 'header', locals: {appeal: @my_appeal}
   .appeal__dropdown
     = render 'country-select'
     = render 'region-select'

@@ -1,0 +1,30 @@
+@mixin each-appeal-contents(){
+  #each-appeal-link{
+    text-decoration: none;
+    cursor: pointer;
+    cursor: hand;
+  }
+  &__contents{
+    position: relative;
+    height: 43px;
+    padding: 22px 0 25px 23px;
+    font-size: 25.5px;
+    border-bottom: 1px solid #ababab;
+    &__name{
+      font-weight: bold;
+      color: #2980b9;
+      span{
+        position: absolute;
+        top: 62%;
+        left: 67%;
+        font-size: 18px;
+        font-weight: bold;
+        color: #777777;
+      }
+    }
+    &:hover{
+      background-color: #f6f6f6;
+    }
+  }
+}
+

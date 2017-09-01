@@ -3,6 +3,8 @@ class Appeal < ApplicationRecord
   validates :outline, presence: true
   validates :country_code, presence: true
   belongs_to :user
-  has_many :groups
+  has_many :groups, dependent: :destroy
+
 end
+
 

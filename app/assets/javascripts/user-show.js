@@ -4,19 +4,19 @@ $(function(){
 
   // ------ ここからマイページのサブイメージにマウスオーバーした時のメインイメージの挙動 ------
 
-  $('.user__contents__sub-image-show').hover(function(){
+  $('.user__contents--image__sub-image-show').hover(function(){
 
-    avatar = $('.user__contents-avatar').children('.user__contents__sub-image-show').css("background-image");
+    avatar = $('.user__contents--image__avatar').children('.user__contents--image__sub-image-show').css("background-image");
 
     // ↑↑変更される前のavatar画像のURLを取得している。hoverファンクションの第二引数で使いたいため、あえてグローバススコープでの変数宣言。
 
     var sub_image = $(this).css('background-image');
 
-    $('.user__contents-avatar').children('.user__contents__sub-image-show').css("background-image", sub_image);
+    $('.user__contents--image__avatar').children('.user__contents--image__sub-image-show').css("background-image", sub_image);
 
   },function(){
 
-    $('.user__contents-avatar').children('.user__contents__sub-image-show').css("background-image", avatar);
+    $('.user__contents--image__avatar').children('.user__contents--image__sub-image-show').css("background-image", avatar);
 
   });
 
