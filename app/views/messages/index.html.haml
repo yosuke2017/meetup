@@ -20,13 +20,14 @@
       .message__contents__left-part__outline
         = @group.appeal.outline
     .message__contents__talking
-      .message__contents__talking__messages-space
+      .message__contents__talking__messages-space{id: "message-area"}
         = render @messages
       .message__contents__talking__send-space
-        = form_for [@group, @message] do |f|
+        = form_for [@group, @message], html: { id: 'form' } do |f|
           = f.text_area :body, rows: "8", id: "message-form", placeholder: "メッセージを入力してください"
           = f.label :image do
             %i.fa.fa-camera
-          = f.file_field :image, style: "display:none;"
+          = f.file_field :image, class: "image-upload", style: "display:none;"
           = f.submit id: "talk-send-btn", value: "送信"
+
 
