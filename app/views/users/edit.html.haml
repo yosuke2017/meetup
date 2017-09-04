@@ -74,7 +74,7 @@
             %h1 ・過去に作成したレポート
             %hr{align: "left"}
             - @appeals.each do |appeal|
-              %li= appeal.name
+              %li= "「" + truncate(appeal.name, length: 20) + "」"
       .user__contents__sending-btn-part
         = f.submit "保存する", class: "user__contents__sending-btn-part__save"
 

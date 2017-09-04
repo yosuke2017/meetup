@@ -1,19 +1,25 @@
 - if message.user.id == current_user.id
   - if message.body?
-    .message__contents__talking__messages-space__content
-      %p{class: "right"}
-        = message.body
+    .message__contents__talking__messages-space__content{ "data-message-id": message.id }
+      .message__contents__talking__messages-space__content__body
+        %p{class: "right"}
+          = message.body
   - if message.image?
-    .message__contents__talking__messages-space__image
-      %div{id: "right-content-image"}
-        = image_tag message.image.url(:message_image)
+    .message__contents__talking__messages-space__content{ "data-message-id": message.id }
+      .message__contents__talking__messages-space__content__image
+        %div{id: "right-content-image"}
+          = image_tag message.image.url(:message_image)
 - else
   - if message.body?
-    .message__contents__talking__messages-space__content
-      %p{class: "left"}
-        = message.body
+    .message__contents__talking__messages-space__content{ "data-message-id": message.id }
+      .message__contents__talking__messages-space__content__body
+        %div{class: "left"}
+          .messge-user-avatar{style: "background-image: url(#{message.user.avatar})", id: "user-avatar"}
+          = message.body
   - if message.image?
-    .message__contents__talking__messages-space__image
-      %div{id: "left-content-image"}
-        = image_tag message.image.url(:message_image)
+    .message__contents__talking__messages-space__content{ "data-message-id": message.id }
+      .message__contents__talking__messages-space__content__image
+        %div{id: "left-content-image"}
+          .messge-user-avatar{style: "background-image: url(#{message.user.avatar})", id: "user-avatar-of-image"}
+          = image_tag message.image.url(:message_image)
 

@@ -1,5 +1,8 @@
 $(function() {
 
+
+
+
   // ------ ここから'国'が選択された時の'地域選択リスト'などの挙動 ------
 
   $('#country-select-field').change(function(){

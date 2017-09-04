@@ -44,7 +44,8 @@
         %h1 ・過去に作成したレポート
         %hr{align: "left"}
         - @appeals.each do |appeal|
-          %li= "「" + appeal.name + "」"
+          = link_to appeal_path(appeal), class: "each-appeal-link" do
+            %li= "「" + truncate(appeal.name, length: 20) + "」"
     - if @user.id == current_user.id
       .user__contents__sending-btn-part
         = link_to "編集する", edit_user_path(current_user), class: "user__contents__sending-btn-part__edit"

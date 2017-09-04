@@ -1,6 +1,7 @@
 @mixin profile-part(){
   &-profile{
     font-family: 'Osaka';
+    min-height: 460px;
     color: #2980b9;
     float: right;
     padding: 20px 65px 0 0;
@@ -51,6 +52,13 @@
       }
     }
     &__appeals{
+      .each-appeal-link{
+        text-decoration: none;
+        &:hover{
+          text-decoration: underline;
+          color: #4169E1;
+        }
+      }
       li{
         padding: 0 0 5px 10px;
         list-style: none;

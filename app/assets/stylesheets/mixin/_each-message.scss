@@ -1,31 +1,40 @@
 @mixin each-message(){
   &__content{
-    @include message-balloon();
-  }
-  &__image{
-    #right-content-image{
-      clear: both;
-      float: right;
-      max-width: 8px;
-      vertical-align: bottom;
-      padding-right: 185px;
-      margin: 8px 15px;
-      border-radius: 20px;
-      position: relative;
-      display: table;
-      display: inline-block;
+    &__body{
+      @include message-balloon();
     }
-    #left-content-image{
-      clear: both;
-      float: left;
-      max-width: 8px;
-      vertical-align: bottom;
-      padding-right: 190px;
-      margin: 8px 15px;
-      border-radius: 20px;
-      position: relative;
-      display: table;
-      display: inline-block;
+    &__image{
+      #right-content-image{
+        clear: both;
+        float: right;
+        max-width: 8px;
+        padding-right: 185px;
+        margin: 8px 15px;
+        border-radius: 20px;
+        position: relative;
+        display: table;
+        display: inline-block;
+      }
+      #left-content-image{
+        position: relative;
+        clear: both;
+        float: left;
+        vertical-align: bottom;
+        margin: 45px 0 12px 55px;
+        border-radius: 20px;
+        display: table;
+        display: inline-block;
+        #user-avatar-of-image{
+          background-size: cover;
+          position: absolute;
+          top: -25%;
+          margin-left: -49px;
+          height: 47px;
+          width: 47px;
+          border: solid 0.5px #99ccff;
+          border-radius: 300px;
+        }
+      }
     }
   }
 }

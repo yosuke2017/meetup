@@ -30,6 +30,41 @@ $(function(){
 
 
 
+
+// -------- ここからカメラのマークにマウスオーバーした時の挙動 --------
+
+  $('.fa-camera').hover(function(){
+    setTimeout(function(){
+      $('.image-upload-balloon').fadeIn();
+    }, 500);
+  }, function(){
+    $('.image-upload-balloon').fadeOut();
+  });
+
+// -------- ここまでがカメラのマークにマウスオーバーした時の挙動 --------
+
+
+
+
+// --------- ここからがページが読み込まれた時にトーク画面が自動で一番下までスクロールされるための実装 --------
+
+
+  $('.message').ready(function(){
+
+    if(window.location.href.indexOf("message") === -1){
+        return;
+      }
+
+    $('.message__contents__talking__messages-space').scrollTop($(".message__contents__talking__messages-space")[0].scrollHeight);
+
+  });
+
+  // --------- ここまでがページが読み込まれた時にトーク画面が自動で一番下までスクロールされるための実装 --------
+
+
+
+
+
 // ここからが画像をアップロードした矢先にDBに保存されてビューに反映される機能
 
   $('.image-upload').on('change', function(){
@@ -56,16 +91,20 @@ $(function(){
 
 
   function renderMyMessageHTML(message){
-     var message_image = message.image ? '<div class="message__contents__talking__messages-space__image">'
+     var message_image = message.image ? '<div class="message__contents__talking__messages-space__content" data-message-id="' + message.id + '">'
+                 + '<div class="message__contents__talking__messages-space__content__image">'
                  + '<div id="right-content-image">'
                  + '<image src= "' + message.image + '" >'
                  + '</div>'
+                 + '</div>'
                  + '</div>' : "";
 
-     var message_body = message.body ? '<div class="message__contents__talking__messages-space__content">'
+     var message_body = message.body ? '<div class="message__contents__talking__messages-space__content" data-message-id="' + message.id + '">'
+                 +'<div class="message__contents__talking__messages-space__content__body">'
                  +'<p class="right">'
                  + message.body
                  +'</p>'
+                 +'</div>'
                  +'</div>' : "";
 
         var html = message_body
@@ -76,21 +115,25 @@ $(function(){
 
 
   function renderYourMessageHTML(message){
-     var message_image = message.image ? '<div class="message__contents__talking__messages-space__image">'
+     var message_image = message.image ? '<div class="message__contents__talking__messages-space__content" data-message-id="' + message.id + '">'
+                 + '<div class="message__contents__talking__messages-space__content__image">'
                  + '<div id="left-content-image">'
+                 + '<image src= "' + message.user.avatar + '", id: "user-avatar" >'
                  + '<image src= "' + message.image + '" >'
+                 + '</div>'
                  + '</div>'
                  + '</div>' : "";
 
-     var message_body = message.body ? '<div class="message__contents__talking__messages-space__content">'
+     var message_body = message.body ? '<div class="message__contents__talking__messages-space__content" data-message-id="' + message.id + '">'
+                 +'<div class="message__contents__talking__messages-space__content__body">'
                  +'<p class="left">'
+                 +'<image src= "' + message.user.avatar + '", id: "user-avatar-of-image" >'
                  + message.body
                  +'</p>'
+                 +'</div>'
                  +'</div>' : "";
 
-        var html ='<% if message.user.id == current_user.id %>'
-                 + message_body
-                 +'<% end %>'
+        var html = message_body
                  + message_image ;
                   return html;
   }
@@ -98,35 +141,39 @@ $(function(){
 
 
   function autoScroll(){
-    $('.message__contents__talking').animate({
-      scrollTop: $('.message__contents__talking')[0].scrollHeight}, 4000);
+    console.log('u');
+    $('.message__contents__talking__messages-space').animate({
+      scrollTop: $('.message__contents__talking__messages-space')[0].scrollHeight}, 4000);
   }
 
 
 
-  // setInterval(function(){
-  //   if(window.location.href.indexOf("message") === -1){
-  //     return;
-  //   }
-  //   var $messages = $(".content__right__under__message__content").last();
-  //   var id = $messages.data("message-id");
-  //   console.log(id)
-  //   $.ajax({
-  //     type: 'GET',
-  //     url: window.location.href,
-  //     dataType: 'json',
-  //   })
-  //   .done(function(data){
-  //    $.each(data, function(index, message){
-  //      if(message.id > id){
-  //       console.log("sss");
-  //       $('#message_area').append(renderMessageHTML(message));
-  //       autoScroll();
-  //      }
-  //    });
-  //   }).fail(function(data){
-  //     alert("エラー");
-  //   })
+  setInterval(function(){
+    if(window.location.href.indexOf("message") === -1){
+      return;
+    }
+    var $messages = $(".message__contents__talking__messages-space__content").last();
+    var id = $messages.data("message-id");
+    console.log(id)
+    $.ajax({
+      type: 'GET',
+      url: window.location.href,
+      dataType: 'json',
+    })
+    .done(function(data){
+     $.each(data, function(index, message){
+       if(message.id > id){
+        console.log("sss");
+        $('#message-area').append(renderYourMessageHTML(message));
+        autoScroll();
+       }
+     });
+    }).fail(function(data){
+      console.log('エラー！！');
+    })
 
-  // }, 4000);
+  }, 4000);
+
+
+
 });

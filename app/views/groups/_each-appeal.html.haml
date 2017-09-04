@@ -2,6 +2,8 @@
   = link_to appeal_path(appeal), id: "each-appeal-link" do
     .log__group-tab-space__each-appeal__contents
       .log__group-tab-space__each-appeal__contents__name
-        = "・「" + appeal.name + "」"
+        = "「" + truncate(appeal.name, length: 21) + "」"
         %span= "(" + appeal.created_at.strftime("%Y/%m/%d") + ")"
+      .log__group-tab-space__each-appeal__contents__outline
+        = truncate(appeal.outline, length: 85)
 

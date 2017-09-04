@@ -16,7 +16,7 @@ class User < ApplicationRecord
   mount_uploader :sub_image3, ImageUploader
 
   has_attached_file :avatar,
-        styles:  { medium: "376x376#", original: "340x340#", thumb: "100x100#" }
+        styles:  { medium: "376x376#", original: "340x340#", thumb: "38x38#" }
   validates_attachment_content_type :avatar,
         content_type: ["image/jpg","image/jpeg","image/png"]
 

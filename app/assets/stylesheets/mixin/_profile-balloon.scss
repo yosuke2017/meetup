@@ -1,19 +1,28 @@
 @mixin profile-balloon(){
+  .fa-times{
+    position: absolute;
+    cursor: pointer;
+    cursor: hand;
+    margin-top: 51px;
+    right: 25.4%;
+    font-size: 18px;
+    color: #f3f3f3;
+    display: none;
+  }
   .balloon {
     font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN';
     position: absolute;
     font-weight: bold;
     display: inline-block;
-    padding: 5px 10px;
+    padding: 5px 25px 5px 10px;
     min-width: 120px;
     max-width: 100%;
     color: #fff;
     font-size: 15px;
     background: #87CEEB;
-    margin-top: 10px;
     border-radius: 10px;
-    top: 120%;
-    left: 55.4%;
+    margin-top: 44px;
+    margin-left: -249px;
     display: none;
     &:hover{
       color: #008080;
