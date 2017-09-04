@@ -1,0 +1,16 @@
+@mixin image-upload-balloon(){
+  .image-upload-balloon{
+    display: none;
+    position: absolute;
+    margin: -217px 0 0 1348px;
+    .arrow_box {
+      color: #ffffff;
+      font-size: 12px;
+      border-radius: 5px;
+      padding: 7px;
+      opacity: 0.6;
+      background: #333;
+    }
+  }
+}
+

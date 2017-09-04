@@ -14,9 +14,7 @@
         width: 91.5px;
         background-size: cover;
         border-radius: 200px;
-        border: solid;
-        border-width: thin;
-        border-color: #C0C0C0;
+        border: solid 0.5px #008B8B;
         float: left;
         display: inline-block;
       }
@@ -37,7 +35,7 @@
       }
       &__last-message-date{
         position: absolute;
-        top: 22%;
+        top: 27%;
         left: 66.5%;
         color: #777777;
         .fa-clock-o{

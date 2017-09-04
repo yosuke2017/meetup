@@ -1,6 +1,6 @@
 @mixin message-balloon(){
   .left, .right {
-    max-width: 80%;
+    max-width: 74%;
     padding: 10px 15px;
     margin: 8px 18px;
     border-radius: 20px;
@@ -8,8 +8,19 @@
     display: table;
     display: inline-block;
     clear: both;
+    #user-avatar{
+      position: absolute;
+      background-size: cover;
+      top: -32%;
+      margin-left: -79px;
+      height: 47px;
+      width: 47px;
+      border: solid 0.5px #99ccff;
+      border-radius: 300px;
+    }
   }
   .left {
+    margin-left: 69px;
     background: #f2f2f2;
     float: left;
   }
@@ -40,7 +51,7 @@
     height: 20px;
     position: absolute;
     top: -13px;
-    background: rgb(255, 255, 255);;
+    background: #99ccff;
   }
   .left:after {
     border-radius: 0 17px;

@@ -7,7 +7,7 @@
           .each-group-log__appeal-user-nickname
             %span= group.appeal.user.nickname
           .each-group-log__last-message
-            = group.last_message
+            = truncate(group.last_message, length: 30)
           .each-group-log__last-message-date
             %i.fa.fa-clock-o.fa-fw= group.last_message_date.created_at.strftime("%Y/%m/%d")
           %i.fa.fa-angle-right.fa-lg
@@ -19,7 +19,7 @@
           .each-group-log__appeal-user-nickname
             %span= group.user.nickname
           .each-group-log__last-message
-            = group.last_message
+            = truncate(group.last_message, length: 30)
           .each-group-log__last-message-date
             %i.fa.fa-clock-o.fa-fw= group.last_message_date.created_at.strftime("%Y/%m/%d")
           %i.fa.fa-angle-right.fa-lg

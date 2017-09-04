@@ -1,13 +1,16 @@
 .header
   .header__right-btns{"data-id": "#{@user.id}", "data-user_id": "#{current_user.id}"}
-    = link_to new_appeal_path, id: "new-appeal-btn" do
+    = link_to new_appeal_path, class: "header-btn" do
       %i.fa.fa-plus.fa-lg
         %span レポートを作る
-    - if @user.id != current_user.id
-      = link_to user_path(current_user), class: "mypage-btn" do
-        %i.fa.fa-user-o.fa-lg
-          %span マイページ
-    = link_to appeals_path, class: "mypage-btn" do
+    = link_to appeals_path, class: "header-btn" do
       %i.fa.fa-reply.fa-lg
         %span トップへ戻る
+    = link_to log_groups_path, class: "header-btn" do
+      %i.fa.fa-history.fa-lg
+        %span メッセージログ
+    - if @user.id != current_user.id
+      = link_to user_path(current_user), class: "mypage-btn" do
+        .mypage-btn__user-thum{style: "background-image: url(#{current_user.avatar})"}
+        %span マイページ
 

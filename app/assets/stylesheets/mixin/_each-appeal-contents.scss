@@ -6,21 +6,25 @@
   }
   &__contents{
     position: relative;
-    height: 43px;
-    padding: 22px 0 25px 23px;
-    font-size: 25.5px;
+    padding: 22px 0 13px 23px;
+    font-size: 22.5px;
     border-bottom: 1px solid #ababab;
     &__name{
       font-weight: bold;
       color: #2980b9;
       span{
         position: absolute;
-        top: 62%;
-        left: 67%;
-        font-size: 18px;
+        top: 24.2%;
+        left: 79%;
+        font-size: 16px;
         font-weight: bold;
         color: #777777;
       }
+    }
+    &__outline{
+      color: #919191;
+      font-size: 16px;
+      padding: 4px 0 0 13px;
     }
     &:hover{
       background-color: #f6f6f6;

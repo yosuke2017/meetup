@@ -2,7 +2,9 @@
   height: 100%;
   width: 100%;
   @include header();
+  @include image-upload-balloon();
   &__contents{
+    position: relative;
     padding: 35px;
     height: 800px;
     margin: 0 auto;
@@ -12,8 +14,8 @@
     @include showing-self-appeal-right-space();
     &__talking{
       float: right;
-      padding-top: 35px;
-      background-color: rgb(255, 255, 255);
+      padding-top: 15px;
+      background-color: #99ccff;
       border: solid;
       border-width: thin;
       border-color: #C0C0C0;

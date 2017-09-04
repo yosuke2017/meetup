@@ -1,12 +1,12 @@
 .header
   .header__right-btns
-    = link_to new_appeal_path, id: "new-appeal-btn" do
+    = link_to new_appeal_path, class: "header-btn" do
       %i.fa.fa-plus.fa-lg
         %span レポートを作る
+    = link_to appeals_path, class: "header-btn" do
+      %i.fa.fa-reply.fa-lg
+        %span トップへ戻る
     = link_to user_path(current_user), class: "mypage-btn" do
-      %i.fa.fa-user-o.fa-lg
-        %span マイページ
-    / = link_to appeals_path, class: "mypage-btn" do
-    /   %i.fa.fa-reply.fa-lg
-    /     %span トップへ戻る
+      .mypage-btn__user-thum{style: "background-image: url(#{current_user.avatar})"}
+      %span マイページ
 

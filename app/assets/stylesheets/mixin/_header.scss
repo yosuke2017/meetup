@@ -4,27 +4,59 @@
     background-color: #ffffff;
     box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
     &__right-btns{
+      position: relative;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
       float: right;
-      padding: 70px 130px 0 0;
-      i {
+      padding: 70px 180px 0 0;
+      i{
         color: #008B8B;
-        font-size: 1.1em;
+        font-size: 1.6em;
         &:hover{
           color: #4169E1;
         }
         span{
+          font-size: 19px;
+          font-weight: bold;
           padding: 0 3px 0 3px;
-          font-family: 'Osaka';
+          font-family: 'ヒラギノ明朝 ProN','Hiragino Mincho ProN';
         }
       }
-      #new-appeal-btn{
+      .header-btn{
         text-decoration: none;
+        padding-left: 13px;
       }
       .mypage-btn{
-        padding-left: 13px;
+        padding-left: 16px;
         text-decoration: none;
+        &__user-thum{
+          position: absolute;
+          top: 62.7%;
+          background-size: cover;
+          border-radius: 300px;
+          height: 2.2em;
+          width: 2.2em;
+          border: solid 0.2px #87CEEB;
+          &:hover{
+            border-color: #4169E1;
+          }
+        }
+        span{
+          font-size: 19px;
+          font-weight: bold;
+          padding-left: 46px;
+          color: #008B8B;
+          font-family: 'ヒラギノ明朝 ProN','Hiragino Mincho ProN';
+          &:hover{
+            color: #4169E1;
+          }
+        }
       }
       @include profile-balloon();
     }
   }
 }
+
