@@ -41,6 +41,16 @@ gem 'dropzonejs-rails'
 
 group :development, :test do
 
+  gem 'capistrano'
+
+  gem 'capistrano-rbenv'
+
+  gem 'capistrano-bundler'
+
+  gem 'capistrano-rails'
+
+  gem 'capistrano3-unicorn'
+
   gem 'pry-rails'
 
   gem 'byebug', platform: :mri
@@ -62,7 +72,9 @@ group :development do
 end
 
 group :production do
+
   gem 'unicorn'
+
 end
 
   gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
