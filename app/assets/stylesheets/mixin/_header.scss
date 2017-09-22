@@ -30,15 +30,15 @@
         padding-left: 13px;
       }
       .mypage-btn{
-        padding-left: 16px;
+        padding-left: 16.7px;
         text-decoration: none;
         &__user-thum{
           position: absolute;
-          top: 62.7%;
+          top: 61.7%;
           background-size: cover;
           border-radius: 300px;
-          height: 2.2em;
-          width: 2.2em;
+          height: 2.4em;
+          width: 2.4em;
           border: solid 0.2px #87CEEB;
           &:hover{
             border-color: #4169E1;
@@ -47,7 +47,7 @@
         span{
           font-size: 19px;
           font-weight: bold;
-          padding-left: 46px;
+          padding-left: 47px;
           color: #008B8B;
           font-family: 'ヒラギノ明朝 ProN','Hiragino Mincho ProN';
           &:hover{

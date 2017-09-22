@@ -2,13 +2,13 @@
   &-profile{
     font-family: 'Osaka';
     min-height: 460px;
-    color: #2980b9;
+    color: #1E90FF;
     float: right;
-    padding: 20px 65px 0 0;
-    font-size: 22px;
+    padding: 20px 95px 0 0;
+    font-size: 17px;
     width: 40%;
     h1{
-      font-size: 24px;
+      font-size: 18px;
       font-weight: bold;
       color: #333;
       font-family: 'TsukuARdGothic-Regular';
@@ -16,37 +16,38 @@
     hr{
       max-width: 95%;
     }
-    .edit-input-field{
-      font-size: 18px;
-      line-height: 20px;
-      width: 88%;
-      padding: 10px 12px;
-    }
-    .edit-input-textarea{
-      font-size: 18px;
-      width: 88%;
-      padding: 13px 12px;
-    }
     &__nickname{
-      padding-bottom: 30px;
+      padding-bottom: 15px;
       p{
         padding-left: 10px;
       }
     }
     &__age{
-      padding-bottom: 30px;
+      padding-bottom: 15px;
+      p{
+        padding-left: 10px;
+      }
+    }
+    &__height{
+      padding-bottom: 15px;
+      p{
+        padding-left: 10px;
+      }
+    }
+    &__background{
+      padding-bottom: 15px;
       p{
         padding-left: 10px;
       }
     }
     &__job{
-      padding-bottom: 30px;
+      padding-bottom: 15px;
       p{
         padding-left: 10px;
       }
     }
     &__introduction{
-      padding-bottom: 30px;
+      padding-bottom: 15px;
       #user-introduction{
         padding-left: 10px;
       }

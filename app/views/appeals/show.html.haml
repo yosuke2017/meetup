@@ -3,7 +3,7 @@
     = render 'header'
     .message__contents
       .message__contents__left-part
-        .message__contents__left-part__user-avatar{style: "background-image: url(#{@appeal.user.avatar.url(:medium)})"}
+        .message__contents__left-part__user-avatar{style: "background-image: url(#{@appeal.user.main_image})"}
         .message__contents__left-part__user-nickname
           = link_to user_path(@appeal.user), id: "user-link" do
             = @appeal.user.nickname + "さんのプロフィールを見る"
@@ -24,7 +24,7 @@
     = render 'header'
     .message__contents
       .message__contents__left-part
-        .message__contents__left-part__user-avatar{style: "background-image: url(#{@appeal.user.avatar.url(:medium)})"}
+        .message__contents__left-part__user-avatar{style: "background-image: url(#{@appeal.user.main_image})"}
         .message__contents__left-part__user-nickname
         %hr
         .message__contents__left-part__name

@@ -1,7 +1,7 @@
 .appeal__dropdown-region{id: "region-select-field"}
   %i.fa.fa-angle-down.fa-lg.region-angle
 
-  %select{name: "region-code", class: "region-select-field active", id: "initial-state"}
+  %select{name: "region-code", class: "region-select-field available", id: "initial-state"}
     %option{value: ""} ---
 
   %select{name: "region_code", class: "region-select-field", id: "us", disabled: ""}
@@ -346,6 +346,14 @@
     %option{value: "ギス＆アラブ・ストリート"}ギス＆アラブ・ストリート
     %option{value: "マリーナ・エリア"}マリーナ・エリア
     %option{value: "シンガポール北部・中部"}シンガポール北部・中部
+
+  %select{name: "region_code", class: "region-select-field", id: "jp", disabled: ""}
+    %option{value: ""} 地域を選んでください
+    %option{value: "北海道"}北海道
+    %option{value: "東京"}東京
+    %option{value: "大阪"}大阪
+    %option{value: "広島"}広島
+    %option{value: "那覇"}那覇
 
 
 

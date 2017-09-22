@@ -11,19 +11,19 @@ $(function() {
 
     console.log(selectedCountry);
 
-    $('.active').attr('disabled','');
+    $('.available').attr('disabled','');
 
-    $('.active').removeClass('active');
+    $('.available').removeClass('available');
 
-    $("#" + selectedCountry).addClass('active');
+    $("#" + selectedCountry).addClass('available');
 
     $("#" + selectedCountry).removeAttr('disabled');
 
     if(selectedCountry === ""){
       $('.region-angle').css('display', 'none');
-      $('#initial-state').addClass('active');
+      $('#initial-state').addClass('available');
     }else if(selectedCountry === "otherwise"){
-      $('#initial-state').addClass('active');
+      $('#initial-state').addClass('available');
     }else{
       $('.region-angle').css('display', 'block');
     }

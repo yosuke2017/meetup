@@ -1,12 +1,19 @@
 .appeal-new{
   height: 100%;
   width: 100%;
+  position: relative;
   .appeal-new-title{
     font-family: 'TsukuARdGothic-Regular';
     font-size: 30px;
     font-weight: bold;
     text-align: center;
-    padding: 80px 0 20px 0;
+    padding: 80px 25px 20px 0;
+  }
+  .fa-paper-plane{
+    font-size: 25px;
+    position: absolute;
+    margin-top: -51px;
+    margin-left: 971px;
   }
   &__form{
     background-color: #ffffff;
@@ -80,9 +87,14 @@
     }
 
     &__submit{
-      padding-top: 30px ;
+      padding-top: 45px ;
       text-align: center;
       @include appeal-new-submit-btn();
+    }
+    &__cancel{
+      text-align: center;
+      padding-top: 17px;
+      @include appeal-new__form__cancel-btn();
     }
   }
 }

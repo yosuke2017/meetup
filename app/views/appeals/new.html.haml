@@ -1,5 +1,6 @@
 .appeal-new
   %h1{class: "appeal-new-title"} レポート情報の入力
+  %i.fa.fa-paper-plane.fa-lg
   .appeal-new__form
     = form_for @appeal, html: {id: "appeal_form"} do |f|
       .appeal-new__form__name-label
@@ -26,4 +27,6 @@
         = render 'region-select'
       .appeal-new__form__submit
         = f.submit '作成する', class: "appeal-new__form__submit-btn"
+      .appeal-new__form__cancel
+        = link_to "戻る", :back, class: "appeal-new__form__cancel-btn"
 

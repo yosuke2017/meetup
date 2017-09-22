@@ -2,26 +2,26 @@
   = render 'header'
   .user__contents
     .user__contents--image
-      .user__contents--image__avatar.active
-        - if @user.avatar?
-          .user__contents--image__sub-image-show{style: "background-image: url(#{@user.avatar.url(:medium)})"}
+      .user__contents--image__avatar
+        - if @user.main_image?
+          .user__contents--image__avatar-show{style: "background-image: url(#{@user.main_image})"}
         - else
-          %p 未設定
-      .user__contents--image__sub--image
+          %p (未設定)
+      .user__contents--image__sub--image{"data-img": "#{@user.sub_image1}", id: "s1"}
         - if @user.sub_image1?
           .user__contents--image__sub-image-show{style: "background-image: url(#{@user.sub_image1.url})"}
         - else
-          %p 未設定
-      .user__contents--image__sub--image
+          %p (未設定)
+      .user__contents--image__sub--image{"data-img": "#{@user.sub_image2}", id: "s2"}
         - if @user.sub_image2?
           .user__contents--image__sub-image-show{style: "background-image: url(#{@user.sub_image2})"}
         - else
-          %p 未設定
-      .user__contents--image__sub--image
+          %p (未設定)
+      .user__contents--image__sub--image{"data-img": "#{@user.sub_image3}", id: "s3"}
         - if @user.sub_image3?
           .user__contents--image__sub-image-show{style: "background-image: url(#{@user.sub_image3})"}
         - else
-          %p 未設定
+          %p (未設定)
     .user__contents-profile
       .user__contents-profile__nickname
         %h1 ・名前（ニックネーム）
@@ -31,15 +31,37 @@
         %h1 ・年齢
         %hr{align: "left"}
         - if @user.age?
-          %p= @user.age + "歳"
+          %p= @user.age
+        - else
+          %p (未設定)
+      .user__contents-profile__height
+        %h1 ・身長
+        %hr{align: "left"}
+        - if @user.height?
+          %p= @user.height
+        - else
+          %p (未設定)
+      .user__contents-profile__height
+        %h1 ・学歴
+        %hr{align: "left"}
+        - if @user.background?
+          %p= @user.background
+        - else
+          %p (未設定)
       .user__contents-profile__job
         %h1 ・職業
         %hr{align: "left"}
-        %p= @user.job
+        - if @user.job?
+          %p= @user.job
+        - else
+          %p (未設定)
       .user__contents-profile__introduction
         %h1 ・自己紹介
         %hr{align: "left"}
-        = simple_format @user.introduction, id: "user-introduction"
+        - if @user.introduction?
+          = simple_format @user.introduction, id: "user-introduction"
+        - else
+          %p (未設定)
       .user__contents-profile__appeals
         %h1 ・過去に作成したレポート
         %hr{align: "left"}

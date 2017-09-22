@@ -1,0 +1,3 @@
+= form_tag("/users/{@user.id}", class: 'dropzone', :method => :put) do
+  .fallback
+    = file_field_tag('attach[file]')
