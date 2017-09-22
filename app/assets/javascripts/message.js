@@ -114,6 +114,7 @@ $(function(){
                  + '<div class="message__contents__talking__messages-space__content__image">'
                  + '<div id="left-content-image">'
                  + '<div class="messge-user-avatar" style="background-image: url(' + message.main_image + ')", id: "user-avatar" >'
+                 + '</div>'
                  + '<image src= "' + message.image + '" >'
                  + '</div>'
                  + '</div>'
@@ -123,6 +124,7 @@ $(function(){
                  +'<div class="message__contents__talking__messages-space__content__body">'
                  +'<p class="left">'
                  + '<div class="messge-user-avatar" style="background-image: url(' + message.main_image + ')", id: "user-avatar" >'
+                 + '</div>'
                  + message.body
                  +'</p>'
                  +'</div>'
