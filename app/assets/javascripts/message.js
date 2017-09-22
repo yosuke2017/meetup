@@ -113,7 +113,7 @@ $(function(){
      var message_image = message.image ? '<div class="message__contents__talking__messages-space__content" data-message-id="' + message.id + '">'
                  + '<div class="message__contents__talking__messages-space__content__image">'
                  + '<div id="left-content-image">'
-                 + '<image src= "' + message.main_image + '", id: "user-avatar" >'
+                 + '<image src= "' + message.user.main_image + '", id: "user-avatar" >'
                  + '<image src= "' + message.image + '" >'
                  + '</div>'
                  + '</div>'
