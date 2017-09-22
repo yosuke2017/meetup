@@ -109,31 +109,31 @@ $(function(){
 
 
 
-  function renderYourMessageHTML(message){
-     var message_image = message.image ? '<div class="message__contents__talking__messages-space__content" data-message-id="' + message.id + '">'
-                 + '<div class="message__contents__talking__messages-space__content__image">'
-                 + '<div id="left-content-image">'
-                 + '<div class="messge-user-avatar" style="background-image: url(' + message.main_image + ')", id: "user-avatar" >'
-                 + '</div>'
-                 + '<image src= "' + message.image + '" >'
-                 + '</div>'
-                 + '</div>'
-                 + '</div>' : "";
+  // function renderYourMessageHTML(message){
+  //    var message_image = message.image ? '<div class="message__contents__talking__messages-space__content" data-message-id="' + message.id + '">'
+  //                + '<div class="message__contents__talking__messages-space__content__image">'
+  //                + '<div id="left-content-image">'
+  //                + '<div class="messge-user-avatar" style="background-image: url(' + message.main_image + ')", id: "user-avatar" >'
+  //                + '</div>'
+  //                + '<image src= "' + message.image + '" >'
+  //                + '</div>'
+  //                + '</div>'
+  //                + '</div>' : "";
 
-     var message_body = message.body ? '<div class="message__contents__talking__messages-space__content" data-message-id="' + message.id + '">'
-                 +'<div class="message__contents__talking__messages-space__content__body">'
-                 +'<p class="left">'
-                 + '<div class="messge-user-avatar" style="background-image: url(' + message.main_image + ')", id: "user-avatar" >'
-                 + '</div>'
-                 + message.body
-                 +'</p>'
-                 +'</div>'
-                 +'</div>' : "";
+  //    var message_body = message.body ? '<div class="message__contents__talking__messages-space__content" data-message-id="' + message.id + '">'
+  //                +'<div class="message__contents__talking__messages-space__content__body">'
+  //                +'<p class="left">'
+  //                + '<div class="messge-user-avatar" style="background-image: url(' + message.main_image + ')", id: "user-avatar" >'
+  //                + '</div>'
+  //                + message.body
+  //                +'</p>'
+  //                +'</div>'
+  //                +'</div>' : "";
 
-        var html = message_body
-                 + message_image ;
-                  return html;
-  }
+  //       var html = message_body
+  //                + message_image ;
+  //                 return html;
+  // }
 
 
 
@@ -145,31 +145,31 @@ $(function(){
 
 
 
-  setInterval(function(){
-    if(window.location.href.indexOf("message") === -1){
-      return;
-    }
-    var $messages = $(".message__contents__talking__messages-space__content").last();
-    var id = $messages.data("message-id");
-    console.log("最後のメッセージのidは" + id);
-    $.ajax({
-      type: 'GET',
-      url: window.location.href,
-      dataType: 'json',
-    })
-    .done(function(data){
-     $.each(data, function(index, message){
-       if(message.id > id){
-        console.log("更新!");
-        $('#message-area').append(renderYourMessageHTML(message));
-        autoScroll();
-       }
-     });
-    }).fail(function(data){
-      console.log('エラー！！');
-    })
+  // setInterval(function(){
+  //   if(window.location.href.indexOf("message") === -1){
+  //     return;
+  //   }
+  //   var $messages = $(".message__contents__talking__messages-space__content").last();
+  //   var id = $messages.data("message-id");
+  //   console.log("最後のメッセージのidは" + id);
+  //   $.ajax({
+  //     type: 'GET',
+  //     url: window.location.href,
+  //     dataType: 'json',
+  //   })
+  //   .done(function(data){
+  //    $.each(data, function(index, message){
+  //      if(message.id > id){
+  //       console.log("更新!");
+  //       $('#message-area').append(renderYourMessageHTML(message));
+  //       autoScroll();
+  //      }
+  //    });
+  //   }).fail(function(data){
+  //     console.log('エラー！！');
+  //   })
 
-  }, 4000);
+  // }, 4000);
 
 
 
