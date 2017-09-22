@@ -18,5 +18,6 @@
       .message__contents__self-appeal-right-space__title
         %p= "「" + @appeal.name + "」へのメッセージ一覧"
       .message__contents__self-appeal-right-space__each-group
-        = render 'each-group'
+        - if @groups.exists?
+          = render 'each-group'
 
