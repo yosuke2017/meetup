@@ -30,7 +30,6 @@ $(function(){
 
 
 
-
 // -------- ここからカメラのマークにマウスオーバーした時の挙動 --------
 
   $('.fa-camera').hover(function(){
@@ -45,9 +44,7 @@ $(function(){
 
 
 
-
 // --------- ここからがページが読み込まれた時にトーク画面が自動で一番下までスクロールされるための実装 --------
-
 
   $('.message').ready(function(){
 
@@ -60,8 +57,6 @@ $(function(){
   });
 
   // --------- ここまでがページが読み込まれた時にトーク画面が自動で一番下までスクロールされるための実装 --------
-
-
 
 
 
@@ -118,7 +113,7 @@ $(function(){
      var message_image = message.image ? '<div class="message__contents__talking__messages-space__content" data-message-id="' + message.id + '">'
                  + '<div class="message__contents__talking__messages-space__content__image">'
                  + '<div id="left-content-image">'
-                 + '<image src= "' + message.user.avatar + '", id: "user-avatar" >'
+                 + '<image src= "' + message.main_image + '", id: "user-avatar" >'
                  + '<image src= "' + message.image + '" >'
                  + '</div>'
                  + '</div>'
@@ -127,7 +122,7 @@ $(function(){
      var message_body = message.body ? '<div class="message__contents__talking__messages-space__content" data-message-id="' + message.id + '">'
                  +'<div class="message__contents__talking__messages-space__content__body">'
                  +'<p class="left">'
-                 +'<image src= "' + message.user.avatar + '", id: "user-avatar-of-image" >'
+                 +'<image src= "' + message.main_image + '", id: "user-avatar-of-image" >'
                  + message.body
                  +'</p>'
                  +'</div>'
@@ -154,7 +149,7 @@ $(function(){
     }
     var $messages = $(".message__contents__talking__messages-space__content").last();
     var id = $messages.data("message-id");
-    console.log(id)
+    console.log("最後のメッセージのidは" + id);
     $.ajax({
       type: 'GET',
       url: window.location.href,
@@ -163,7 +158,7 @@ $(function(){
     .done(function(data){
      $.each(data, function(index, message){
        if(message.id > id){
-        console.log("sss");
+        console.log("更新!");
         $('#message-area').append(renderYourMessageHTML(message));
         autoScroll();
        }
