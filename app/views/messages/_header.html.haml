@@ -1,4 +1,7 @@
 .header
+  .header__left-logo
+    = link_to appeals_path do
+      = image_tag 'MeetupJapanLogo.png'
   .header__right-btns
     = link_to new_appeal_path, class: "header-btn" do
       %i.fa.fa-paper-plane.fa-lg
