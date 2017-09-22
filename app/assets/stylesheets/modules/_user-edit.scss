@@ -264,11 +264,12 @@
       &-name{
         position: relative;
         .edit-input-name{
-          font-size: 20px;
+          color: #788086;
+          font-size: 19px;
           line-height: 25px;
           width: 48%;
           margin-left: 70px;
-          padding: 12px 14px;
+          padding: 11px 13px;
         }
         .form-require{
           position: absolute;
@@ -306,6 +307,7 @@
       }
       &-introduction{
         .edit-input-introduction{
+          color: #788086;
           font-size: 20px;
           width: 48%;
           margin-left: 70px;
