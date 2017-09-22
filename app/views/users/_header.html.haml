@@ -3,9 +3,10 @@
     = link_to appeals_path do
       = image_tag 'MeetupJapanLogo.png'
   .header__right-btns{"data-id": "#{@user.id}", "data-user_id": "#{current_user.id}"}
-    = link_to new_appeal_path, class: "header-btn" do
-      %i.fa.fa-paper-plane.fa-lg
-        %span レポートを作る
+    - if @user.id == current_user.id
+      = link_to new_appeal_path, class: "header-btn" do
+        %i.fa.fa-paper-plane.fa-lg
+          %span レポートを作る
     = link_to appeals_path, class: "header-btn" do
       %i.fa.fa-reply.fa-lg
         %span トップへ戻る
