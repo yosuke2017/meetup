@@ -8,7 +8,7 @@
   &__contents{
     clear: both;
     background-color: #ffffff;
-    height: 800px;
+    height: 100%;
     width: 980px;
     padding-top: 27px;
     margin: 30px auto;
@@ -23,16 +23,16 @@
         border-color: rgb(204, 204, 204);
         height: 345px;
         width: 345px;
-        display: none;
         margin-bottom: 3.4px;
+        &-show{
+          height: 100%;
+          width: 100%;
+          background-size: cover;
+        }
         p{
           font-weight: bold;
           text-align: center;
           line-height: 360px;
-        }
-        #edit-main-avatar{
-          color: #fff;
-          padding-left: 30px;
         }
       }
       &__sub--image{
@@ -70,17 +70,6 @@
         text-decoration: none;
         color: #ffffff;
         border: solid 2px #66cdaa;
-        border-radius: 10px;
-      }
-      &__save{
-        background-color: #2980b9;
-        margin-bottom: 4px;
-        padding: 0.5em 3.2em;
-        text-decoration: none;
-        color: #ffffff;
-        cursor: pointer;
-        cursor: hand;
-        border: solid 2px #2980b9;
         border-radius: 10px;
       }
     }

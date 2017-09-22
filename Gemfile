@@ -37,6 +37,8 @@ gem 'haml-rails'
 
 gem 'paperclip'
 
+gem 'dropzonejs-rails'
+
 group :development, :test do
 
   gem 'pry-rails'

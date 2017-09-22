@@ -4,8 +4,8 @@ $(function(){
 
   tabs.click(function() {
     var content = this.hash.replace('/','');
-    tabs.removeClass("active");
-    $(this).addClass("active");
+    tabs.removeClass("present");
+    $(this).addClass("present");
     $("#content").find('p').hide();
     $(content).fadeIn(200);
   });

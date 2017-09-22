@@ -1,13 +1,12 @@
 @mixin appeal-new-submit-btn{
   .appeal-new__form__submit-btn {
-    display: inline-block;
     font-size: 17px;
     background-color: #2980b9;
-    padding: 0.5em 4.0em;
+    padding: 0.5em 4.5em;
     text-decoration: none;
     color: #ffffff;
     border: solid 2px #2980b9;
-    border-radius: 3px;
+    border-radius: 6px;
     transition: .4s;
     cursor: pointer;
     cursor: hand;

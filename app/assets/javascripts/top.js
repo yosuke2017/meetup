@@ -20,15 +20,15 @@ $(function(){
     }, 800)
     });
 
-  $('.document').ready(function() {
+  $(window).on('load', function() {
     console.log("readyおけ");
     setTimeout(function() {
       $('.top__hide-content').fadeIn(800);
       setTimeout(function(){
-        $('.top__center-content__message').slideToggle();
+        $('.top__center-content__message').fadeIn();
       },1000);
     },900);
-  })
+  });
 
 });
 

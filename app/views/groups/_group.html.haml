@@ -3,7 +3,7 @@
     - if group.messages.present?
       = link_to group_messages_path(group), class: "each-group" do
         .each-group-log
-          .each-group-log__appeal-user-avatar{style: "background-image: url(#{group.appeal.user.avatar})"}
+          .each-group-log__appeal-user-avatar{style: "background-image: url(#{group.appeal.user.main_image})"}
           .each-group-log__appeal-user-nickname
             %span= group.appeal.user.nickname
           .each-group-log__last-message
@@ -15,7 +15,7 @@
     - if group.messages.present?
       = link_to group_messages_path(group), class: "each-group" do
         .each-group-log
-          .each-group-log__appeal-user-avatar{style: "background-image: url(#{group.user.avatar})"}
+          .each-group-log__appeal-user-avatar{style: "background-image: url(#{group.user.main_image})"}
           .each-group-log__appeal-user-nickname
             %span= group.user.nickname
           .each-group-log__last-message

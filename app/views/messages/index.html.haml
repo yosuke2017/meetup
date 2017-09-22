@@ -3,12 +3,12 @@
   .message__contents
     .message__contents__left-part
       - if @group.appeal.user.id != current_user.id
-        .message__contents__left-part__user-avatar{style: "background-image: url(#{@group.appeal.user.avatar.url(:medium)})"}
+        .message__contents__left-part__user-avatar{style: "background-image: url(#{@group.appeal.user.main_image})"}
         .message__contents__left-part__user-nickname
           = link_to user_path(@group.appeal.user), id: "user-link" do
             = @group.appeal.user.nickname + "さんのプロフィールを見る"
       - else
-        .message__contents__left-part__user-avatar{style: "background-image: url(#{@group.user.avatar.url(:medium)})"}
+        .message__contents__left-part__user-avatar{style: "background-image: url(#{@group.user.main_image})"}
         .message__contents__left-part__user-nickname
           = link_to user_path(@group.user), id: "user-link" do
             = @group.user.nickname + "さんのプロフィールを見る"

@@ -1,87 +1,103 @@
-.user
+.user-edit
   = render 'header'
-  = form_for @user do |f|
-    .user__contents
-      .user__contents--image
-        / .user__contents--image__avatar-edit
-        /   = f.label :avatar do
-        /     %p{id: "edit-btn"} 変更する
-        /   = f.file_field :avatar, style: "display: none"
-        /   %p{id: "delete-btn"} 削除する
-        .user__contents--image__avatar.active
-          - if @user.avatar?
-            = f.label :avatar do
-              .upload-order{style: "background-image: url(#{@user.avatar.url(:medium)})"}
-                .upload-order-hide
-                %span{id: "edit-main-avatar"} メイン画像を変更する
-            = f.file_field :avatar, class: "avatar-input", style: "display: none"
-          - else
-            = f.label :avatar do
-              .upload-order
-                %span クリックして画像をアップロード
-            = f.file_field :avatar, style: "display: none"
-        .user__contents--image__sub--image
-          - if @user.sub_image1?
-            = f.label :sub_image1 do
-              .upload-order{id: "unkotest", style: "background-image: url(#{@user.sub_image1})"}
-                .upload-order-hide
-                %span{class: "edit-sub-image"} サブ画像1を変更する
-            = f.file_field :sub_image1,  style: "display: none"
-          - else
-            = f.label :sub_image1 do
-              .upload-order
-                %span{class: "upload-sub-image"}サブ画像1をアップロード
-            = f.file_field :sub_image1, style: "display: none"
-        .user__contents--image__sub--image
-          - if @user.sub_image2?
-            = f.label :sub_image2 do
-              .upload-order{id: "testy", style: "background-image: url(#{@user.sub_image2})"}
-                .upload-order-hide
-                %span{class: "edit-sub-image"} サブ画像2を変更する
-            = f.file_field :sub_image2, style: "display: none"
-          - else
-            = f.label :sub_image2 do
-              .upload-order
-                %span{class: "upload-sub-image"} サブ画像2をアップロード
-            = f.file_field :sub_image2, style: "display: none"
-        .user__contents--image__sub--image
-          - if @user.sub_image3?
-            = f.label :sub_image3 do
-              .upload-order{style: "background-image: url(#{@user.sub_image3})"}
-                .upload-order-hide
-                %span{class: "edit-sub-image"} サブ画像3を変更する
-            = f.file_field :sub_image3, style: "display: none"
-          - else
-            = f.label :sub_image3 do
-              .upload-order
-                %span{class: "upload-sub-image"}サブ画像3をアップロード
-            = f.file_field :sub_image3, style: "display: none"
-      .user__contents-profile
-        .user__contents-profile__nickname
-          %h1 ・名前（ニックネーム）
-          = f.text_field :nickname, value: "#{@user.nickname}", class: "edit-input-field"
-        .user__contents-profile__age
-          %h1 ・年齢
-          = f.text_field :age, value: "#{@user.age}", class: "edit-input-field"
-        .user__contents-profile__job
-          %h1 ・職業
-          = f.text_field :job, value: "#{@user.job}", class: "edit-input-field"
-        .user__contents-profile__introduction
-          %h1 ・自己紹介
-          = f.text_area :introduction, rows: "8",value: "#{@user.introduction}", class: "edit-input-textarea"
-        - if @user.id == current_user.id
-          .user__contents-profile__appeals
-            %h1 ・過去に作成したレポート
-            %hr{align: "left"}
-            - @appeals.each do |appeal|
-              %li= "「" + truncate(appeal.name, length: 20) + "」"
-      .user__contents__sending-btn-part
-        = f.submit "保存する", class: "user__contents__sending-btn-part__save"
+  .user-edit__contents
+    %h1{id: "edit-top-border"} プロフィールの編集
+    %h2 メイン画像の登録
+    %span{class: "form-recommend"} 推奨
+    = form_for @user do |f|
+      .user-edit__contents__main-image{"data-image": "#{@user.main_image}"}
+
+        .user-edit__contents__main-image__container.upload
+          .user-edit__contents__main-image__container__dropbox
+            %i.fa.fa-cloud-upload.fa-3x
+            %span ドラッグ&ドロップ
+            %p またはクリックして画像をアップロード
+          = f.file_field :main_image, class: "main-input"
+          = f.check_box :remove_main_image, id: "main-check", style: "display: none;"
+        .user-edit__contents__main-image__right-sentence.upload
+          %p メイン画像は設定されていません
+
+        .user-edit__contents__main-image__preview.preview
+          .user-edit__contents__main-image__preview__field{id: "main-preview"}
+            = image_tag @user.main_image, id: "main-image-show"
+        .user-edit__contents__main-image__right-sentence.preview
+          %a{id: "main-preview-delete"} メイン画像を削除する
+
+      %h2 サブイメージの登録（3枚まで)
+      .user-edit__contents__sub-image
+
+        .user-edit__contents__sub-image__existing
+          .user-edit__contents__sub-image__existing__field{"data-image": "#{@user.sub_image1}", class: "input1", id: 'ex1'}
+            = image_tag @user.sub_image1
+            %a{class: "preview-delete", "data-id": "sub1", "data-delete": "image1"} 削除
+          .user-edit__contents__sub-image__existing__field{"data-image": "#{@user.sub_image2}", class: "input2", id: 'ex2'}
+            = image_tag @user.sub_image2
+            %a{class: "preview-delete", "data-id": "sub2", "data-delete": "image2"} 削除
+          .user-edit__contents__sub-image__existing__field{"data-image": "#{@user.sub_image3}", class: "input3", id: 'ex3'}
+            = image_tag @user.sub_image3
+            %a{class: "preview-delete", "data-id": "sub3", "data-delete": "image3"} 削除
 
 
+        .user-edit__contents__sub-image__preview
+          .user-edit__contents__sub-image__preview__field{class: "input1 sub1"}
+            %a{class: "preview-delete", id: "delete1", "data-id": "preview"} 削除
+
+          .user-edit__contents__sub-image__preview__field{class: "input2 sub2"}
+            %a{class: "preview-delete", id: "delete2", "data-id": "preview"} 削除
+
+          .user-edit__contents__sub-image__preview__field{class: "input3 sub3"}
+            %a{class: "preview-delete", id: "delete3", "data-id": "preview"} 削除
 
 
+        .user-edit__contents__sub-image__container.active{class: 'ex1', id: "input1"}
+          .user-edit__contents__sub-image__container__dropbox
+            %p ドラッグ&ドロップ、またはクリックしてファイルをアップロード
+          = f.file_field :sub_image1, id: "sub1", class: "file-input"
+          = f.check_box :remove_sub_image1, id: 'image1', style: "display: none;"
 
+
+        .user-edit__contents__sub-image__container{class: 'ex2', id: "input2"}
+          .user-edit__contents__sub-image__container__dropbox
+            %p ドラッグ&ドロップ、またはクリックしてファイルをアップロード
+          = f.file_field :sub_image2, id: "sub2", class: "file-input"
+          = f.check_box :remove_sub_image2, id: 'image2', style: "display: none;"
+
+
+        .user-edit__contents__sub-image__container{class: 'ex3', id: "input3"}
+          .user-edit__contents__sub-image__container__dropbox
+            %p ドラッグ&ドロップ、またはクリックしてファイルをアップロード
+          = f.file_field :sub_image3, id: "sub3", class: "file-input"
+          = f.check_box :remove_sub_image3, id: 'image3', style: "display: none;"
+
+
+      .user-edit__contents__profile
+        .user-edit__contents__profile-name
+          %h2 名前(ニックネーム)
+          %span{class: "form-require"} 必須
+          = f.text_field :nickname, value: "#{@user.nickname}", class: "edit-input-name"
+        .user-edit__contents__profile-age{"data-age": "#{@user.age}"}
+          %h2 年齢
+          .user-edit__contents__profile-age-dropdown
+            = render 'age-select'
+        .user-edit__contents__profile-height{"data-height": "#{@user.height}"}
+          %h2 身長（大体）
+          .user-edit__contents__profile-height-dropdown
+            = render 'height-select'
+        .user-edit__contents__profile-background{"data-background": "#{@user.background}"}
+          %h2 学歴
+          .user-edit__contents__profile-background-dropdown
+            = render 'background-select'
+        .user-edit__contents__profile-job{"data-job": "#{@user.job}"}
+          %h2 職業
+          .user-edit__contents__profile-job-dropdown
+            = render 'job-select'
+        .user-edit__contents__profile-introduction
+          %h2 自己紹介
+          = f.text_area :introduction, rows: "8", class: "edit-input-introduction", value: "#{@user.introduction}"
+        .user-edit__cotnents__profile-save
+          = f.submit "保存する", class: "user-edit__contents__profile-save-btn"
+        .user-edit__contents__profile-cancel
+          = link_to "キャンセル", :back, class: "user-edit__contents__profile-cancel-btn"
 
 
 
