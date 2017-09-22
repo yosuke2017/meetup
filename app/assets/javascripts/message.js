@@ -113,7 +113,7 @@ $(function(){
      var message_image = message.image ? '<div class="message__contents__talking__messages-space__content" data-message-id="' + message.id + '">'
                  + '<div class="message__contents__talking__messages-space__content__image">'
                  + '<div id="left-content-image">'
-                 + '<div class="messge-user-avatar" style="background-image: url(' + message.main_image + ')", id: "user-avatar" >'
+                 + '<div class="messge-user-avatar" style="background-image: url(' + message.main_image + ')", id="user-avatar" >'
                  + '</div>'
                  + '<image src= "' + message.image + '" >'
                  + '</div>'
@@ -123,7 +123,7 @@ $(function(){
      var message_body = message.body ? '<div class="message__contents__talking__messages-space__content" data-message-id="' + message.id + '">'
                  +'<div class="message__contents__talking__messages-space__content__body">'
                  +'<div class="left">'
-                 +'<div class="messge-user-avatar" style="background-image: url(' + message.main_image + ')", id: "user-avatar" >'
+                 +'<div class="messge-user-avatar" style="background-image: url(' + message.main_image + ')", id="user-avatar" >'
                  +'</div>'
                  + message.body
                  +'</div>'
