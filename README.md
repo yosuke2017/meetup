@@ -61,7 +61,7 @@ below some awesome functions...
 
 <br />
 
-[![https://gyazo.com/35b74ebb4155b97823dc807c7e405c65](https://i.gyazo.com/35b74ebb4155b97823dc807c7e405c65.gif)](https://gyazo.com/35b74ebb4155b97823dc807c7e405c65)
+[![https://gyazo.com/cdc158a76ac9ff15bbdfc653f75fd57c](https://i.gyazo.com/cdc158a76ac9ff15bbdfc653f75fd57c.gif)](https://gyazo.com/cdc158a76ac9ff15bbdfc653f75fd57c)
 
 <br />
 <br />
