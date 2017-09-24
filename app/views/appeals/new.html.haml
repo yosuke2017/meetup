@@ -1,16 +1,17 @@
 .appeal-new
-  %h1{class: "appeal-new-title"} レポート情報の入力
-  %i.fa.fa-paper-plane.fa-lg
+  .appeal-new__upper
+    %h1{class: "appeal-new-title"} 投稿情報の入力
+    %i.fa.fa-paper-plane.fa-lg
   .appeal-new__form
     = form_for @appeal, html: {id: "appeal_form"} do |f|
       .appeal-new__form__name-label
-        = f.label 'レポート名'
+        = f.label '投稿のタイトル'
         %span{class: "form-require"} 必須
       .appeal-new__form__name-field
         = f.text_field :name, placeholder: "例) ロサンゼルスで1人です！一緒にディナーしませんか？？", class: "appeal-new__form-name"
         %p{class: "error-messages", id: "under-name-field-message"}
       .appeal-new__form__outline-label
-        = f.label 'レポートの説明'
+        = f.label '投稿の説明'
         %span{class: "form-require"} 必須
       .appeal-new__form__outline-field
         = f.text_area :outline, placeholder: "例) 今ロサンゼルスに1人でいます。\nロサンゼルスに詳しい方、美味しいお店など教えて欲しいです〜！\n連絡待ってます！！", class: "appeal-new__form-outline", rows: "8"

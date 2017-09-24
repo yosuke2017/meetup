@@ -2,18 +2,20 @@
   height: 100%;
   width: 100%;
   position: relative;
-  .appeal-new-title{
-    font-family: 'TsukuARdGothic-Regular';
-    font-size: 30px;
-    font-weight: bold;
+  &__upper{
     text-align: center;
-    padding: 80px 25px 20px 0;
-  }
-  .fa-paper-plane{
-    font-size: 25px;
-    position: absolute;
-    margin-top: -51px;
-    margin-left: 971px;
+    margin: 80px 25px 20px 0;
+    position: relative;
+    .appeal-new-title{
+      font-family: 'TsukuARdGothic-Regular';
+      font-size: 30px;
+      font-weight: bold;
+    }
+    .fa-paper-plane{
+      font-size: 25px;
+      position: absolute;
+      margin: -31px 0 0 111px;
+    }
   }
   &__form{
     background-color: #ffffff;
