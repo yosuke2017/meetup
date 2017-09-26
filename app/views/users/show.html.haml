@@ -63,7 +63,7 @@
         - else
           %p (未設定)
       .user__contents-profile__appeals
-        %h1 ・過去に作成したレポート
+        %h1 ・過去の投稿
         %hr{align: "left"}
         - @appeals.each do |appeal|
           = link_to appeal_path(appeal), class: "each-appeal-link" do
