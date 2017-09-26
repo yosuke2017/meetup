@@ -4,22 +4,22 @@
     .user__contents--image
       .user__contents--image__avatar
         - if @user.main_image?
-          .user__contents--image__avatar-show{style: "background-image: url(#{@user.main_image})"}
+          .user__contents--image__avatar-show{style: "background-image: image-url(#{@user.main_image})"}
         - else
           %p (未設定)
       .user__contents--image__sub--image{"data-img": "#{@user.sub_image1}", id: "s1"}
         - if @user.sub_image1?
-          .user__contents--image__sub-image-show{style: "background-image: url(#{@user.sub_image1.url})"}
+          .user__contents--image__sub-image-show{style: "background-image: image-url(#{@user.sub_image1.url})"}
         - else
           %p (未設定)
       .user__contents--image__sub--image{"data-img": "#{@user.sub_image2}", id: "s2"}
         - if @user.sub_image2?
-          .user__contents--image__sub-image-show{style: "background-image: url(#{@user.sub_image2})"}
+          .user__contents--image__sub-image-show{style: "background-image: image-url(#{@user.sub_image2})"}
         - else
           %p (未設定)
       .user__contents--image__sub--image{"data-img": "#{@user.sub_image3}", id: "s3"}
         - if @user.sub_image3?
-          .user__contents--image__sub-image-show{style: "background-image: url(#{@user.sub_image3})"}
+          .user__contents--image__sub-image-show{style: "background-image: image-url(#{@user.sub_image3})"}
         - else
           %p (未設定)
     .user__contents-profile
