@@ -22,8 +22,8 @@
         border: dashed;
         border-width: thin;
         border-color: rgb(204, 204, 204);
-        height: 345px;
-        width: 345px;
+        height: auto;
+        max-width: 345px;
         margin-bottom: 3.4px;
         &-show{
           height: 100%;
