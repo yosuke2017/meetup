@@ -18,7 +18,7 @@
         = form_for [@group] do |f|
           = hidden_field_tag :appeal_id, @appeal.id
           = hidden_field_tag :receiver_id, @appeal.user.id
-          = f.submit id: "talk-start-btn", value: "#{@appeal.user.nickname}さんにメッセージを送る(無料)"
+          = f.submit id: "talk-start-btn", value: "#{truncate(@appeal.user.nickname, length: 11)}さんにメッセージを送る(無料)"
 - else
   .message
     = render 'header'
